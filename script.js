@@ -8,13 +8,13 @@ const i18n = {
     menuPricing: "서비스",
     menuContact: "문의",
     
-    heroTitle: "차세대 금융 포트폴리오 최적화를 구현하는<br class='br-md' /><span class='accent'>새로운 방식</span>",
-    heroSubtitle: "다양한 제약 조건, 리스크 관리, 최적 배분 전략까지—<br class='br-md' />금융기관의 금융 포트폴리오 운용 요구사항을 통합 관리하는 플랫폼",
+    heroTitle: "차세대 금융 포트폴리오 최적화를 구현하는 <br class='br-md' /><span class='accent'>새로운 방식</span>",
+    heroSubtitle: "다양한 제약 조건, 리스크 관리, 최적 배분 전략까지— <br class='br-md' />금융기관의 금융 포트폴리오 운용 요구사항을 통합 관리하는 플랫폼",
     ctaSolution: "솔루션 살펴보기",
     ctaContact: "도입 문의",
     
     problemTitle: "금융기관이 직면한 운용의 현실",
-    problemLead: "금융 포트폴리오 운용은 단순한 최적화 문제가 아닙니다.<br class='br-md' />다양한 요구사항을 동시에 충족해야 하는 복합적인 과제입니다.",
+    problemLead: "금융 포트폴리오 운용은 단순한 최적화 문제가 아닙니다. <br class='br-md' />다양한 요구사항을 동시에 충족해야 하는 복합적인 과제입니다.",
     problem1Title: "다양한 제약 조건",
     problem1Body: "규제 준수, 내부 리스크 정책, 고객별 투자 성향, ESG 기준 등 복잡한 제약을 동시에 관리해야 합니다.",
     problem2Title: "운용 프로세스 복잡성",
@@ -98,13 +98,13 @@ const i18n = {
     menuPricing: "Services",
     menuContact: "Contact",
     
-    heroTitle: "A <span class='accent'>new approach</span><br class='br-md' />to next-generation portfolio optimization",
-    heroSubtitle: "Constraints, risk management, optimal allocation—<br class='br-md' />an integrated platform for institutional portfolio management",
+    heroTitle: "A <span class='accent'>new approach</span> <br class='br-md' />to next-generation portfolio optimization",
+    heroSubtitle: "Constraints, risk management, optimal allocation— <br class='br-md' />an integrated platform for institutional portfolio management",
     ctaSolution: "Explore Solution",
     ctaContact: "Contact Us",
     
     problemTitle: "The Reality of Portfolio Management",
-    problemLead: "Portfolio management is not just an optimization problem.<br class='br-md' />It's a complex challenge requiring simultaneous satisfaction of diverse requirements.",
+    problemLead: "Portfolio management is not just an optimization problem. <br class='br-md' />It's a complex challenge requiring simultaneous satisfaction of diverse requirements.",
     problem1Title: "Multiple Constraints",
     problem1Body: "Regulatory compliance, internal risk policies, client preferences, ESG criteria—all must be managed simultaneously.",
     problem2Title: "Process Complexity",
