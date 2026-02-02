@@ -9,7 +9,7 @@ const i18n = {
     menuContact: "문의",
     
     heroTitle: "차세대 금융 포트폴리오 최적화를 구현하는 <br class='br-md' /><span class='accent'>새로운 방식</span>",
-    heroSubtitle: "다양한 제약 조건, 리스크 관리, 최적 배분 전략까지— <br class='br-md' />금융기관의 금융 포트폴리오 운용 요구사항을 통합 관리하는 플랫폼",
+    heroSubtitle: "다양한 제약 조건, 리스크 관리, 최적 배분 전략까지— <br class='br-md' />금융 포트폴리오 운용 요구사항을 통합 관리하는 플랫폼",
     ctaSolution: "솔루션 살펴보기",
     ctaContact: "도입 문의",
     
