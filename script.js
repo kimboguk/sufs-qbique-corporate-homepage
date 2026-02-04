@@ -39,16 +39,31 @@ const i18n = {
     feature1Body: "고객이 자체 운용 전략과 모델을 플랫폼 상에서 직접 구현하고 테스트할 수 있습니다. 다양한 목적 함수와 제약 조건을 자유롭게 조합하여 전략 변경과 실험을 빠르게 수행할 수 있습니다.",
     feature2Title: "고급 최적화 엔진",
     feature2Body: "대규모 자산군에서도 효율적으로 작동하는 최적화 알고리즘을 제공합니다. 양자 컴퓨팅을 활용한 탐색 범위 확장 옵션과 머신러닝 기반 수익률 전망 모델을 통합하여 더 나은 의사결정을 지원합니다.",
-    feature3Title: "운용 편의성 극대화",
-    feature3Body: "직관적인 웹 기반 인터페이스로 쉽게 사용할 수 있습니다. 생성형 AI를 활용한 최적화 문제 정의 및 보고서 자동 생성 기능으로 의사결정 과정의 추적과 문서화를 지원합니다.",
+    feature3Title: "문제 정의 및 리포팅",
+    feature3Body: "직관적인 웹 기반 인터페이스로 최적화 문제를 쉽게 정의할 수 있습니다. 생성형 AI를 활용한 보고서 자동 생성 기능으로 의사결정 과정의 추적과 문서화를 지원합니다.",
+    feature4Title: "AI DevOps",
+    feature4Body: "개발자 모드에서 에이전틱 AI 개발 도구를 활용하여 자체 모델을 직접 구축하고 확장할 수 있습니다. 퀀트팀과 리서치팀이 플랫폼 위에서 독자적인 알고리즘을 개발하고 배포할 수 있는 환경을 제공합니다.",
+    feature5Title: "ChatOps",
+    feature5Body: "슬랙, 팀즈 등 협업 도구에서 포트폴리오 최적화 플랫폼에 접속하여 실시간으로 실행하고 관리할 수 있습니다. 별도의 접속 없이 일상적인 커뮤니케이션 환경에서 운영 업무를 처리합니다.",
     
     technologyTitle: "기술적 차별점",
+    techKeyword1: "효율성",
+    techKeyword2: "고품질",
+    techKeyword3: "정확성",
     tech1Title: "휴리스틱 + 임베디드 최적화",
     tech1Body: "포트폴리오 자산 선택 문제는 자산 수가 증가할수록 탐색 공간이 지수적으로 증가하는 본질적 어려움이 있습니다. 당사의 휴리스틱 기반 접근법은 이 문제를 효과적으로 우회하여, 합리적인 계산 비용으로 우수한 준 최적해를 탐색합니다.",
     tech2Title: "양자-고전 하이브리드 최적화",
     tech2Body: "고전 알고리즘으로 1차 최적화를 수행한 후, 양자 어닐링을 통해 더 넓은 탐색 공간에서 개선된 해를 탐색합니다. 현재 상용화된 양자 컴퓨팅 기술을 실용적으로 활용합니다.",
     tech3Title: "머신러닝 기반 수익률 전망",
     tech3Body: "시장 데이터와 다양한 팩터를 활용한 수익률 예측 모델을 제공합니다. 생성형 AI가 제공하는 시장 분석 전망이나 전문가 의견도 용이하게 반영할 수 있어, 다양한 전망 시나리오를 최적화에 반영할 수 있습니다.",
+    quoteToggle: "💬 Open Quote",
+    quoteToggleClose: "💬 Close Quote",
+    quote1Text: "We formulate desiderata which will serve as a gauge of success in our subsequent considerations; but it is in accordance with the usual heuristic procedure to reason about these desiderata---even before we are able to satisfiy them.",
+    quote1Cite: "— John von Neumann & Oskar Morgenstern, Theory of Games and Economic Behavior (1944)",
+    quote2Text: "If I were forced to sum up in one sentence what the Copenhagen interpretation says to me, it would be “Shut up and calculate!” But I won't shut up. I would rather celebrate the strangeness of quantum theory than deny it, ...",
+    quote2Cite: "— N. David Mermin, What's Wrong with This Pillow? (1989)",
+    quote3Text: "Just as the ability to devise simple but evocative models is the signature of the great scientist so overelaboration and overparameterization is often the mark of mediocrity. Box (1974)---Our theretical analysis shows the flaw in this view.",
+    quote3Cite: "— Brian Kelly, et. al., The Virtue of Complexity in Return Prediction (2024)",
     roadmapTitle: "기술 로드맵",
     phase1Label: "현재",
     phase1Text: "고전 최적화 엔진 + 웹 플랫폼",
@@ -129,16 +144,31 @@ const i18n = {
     feature1Body: "Clients can implement and test their own strategies directly on the platform. Freely combine various objective functions and constraints for rapid strategy experimentation.",
     feature2Title: "Advanced Optimization Engine",
     feature2Body: "Efficient optimization algorithms that work with large asset universes. Quantum computing options for expanded search space and ML-based return forecasting models support better decision-making.",
-    feature3Title: "Maximized Operational Convenience",
-    feature3Body: "Easy-to-use intuitive web interface. Generative AI-powered problem definition and automated report generation support decision tracking and documentation.",
+    feature3Title: "Problem Definition & Reporting",
+    feature3Body: "Define optimization problems easily through an intuitive web-based interface. Generative AI-powered automated report generation supports decision tracking and documentation.",
+    feature4Title: "AI DevOps",
+    feature4Body: "Build and extend custom models using agentic AI development tools in developer mode. Provides an environment where quant and research teams can develop and deploy proprietary algorithms on the platform.",
+    feature5Title: "ChatOps",
+    feature5Body: "Access and manage the portfolio optimization platform in real-time through collaboration tools like Slack and Teams. Handle operational tasks within your everyday communication environment without separate access.",
     
     technologyTitle: "Technical Differentiation",
+    techKeyword1: "Efficiency",
+    techKeyword2: "Quality",
+    techKeyword3: "Accuracy",
     tech1Title: "Heuristic + Embedded Optimization",
     tech1Body: "Portfolio asset selection inherently faces exponentially growing search space as the number of assets increases. Our heuristic-based approach effectively circumvents this challenge, finding high-quality near-optimal solutions at reasonable computational cost.",
     tech2Title: "Quantum-Classical Hybrid Optimization",
     tech2Body: "After initial optimization with classical algorithms, quantum annealing explores a broader search space for improved solutions. Practical application of currently commercialized quantum computing technology.",
     tech3Title: "ML-Based Return Forecasting",
     tech3Body: "Return prediction models utilizing market data and various factors. Seamlessly integrates market outlook from generative AI or expert opinions, enabling diverse forecast scenarios to be reflected in optimization.",
+    quoteToggle: "💬 View Quote",
+    quoteToggleClose: "💬 Hide Quote",
+    quote1Text: "[John von Neumann quote - to be edited]",
+    quote1Cite: "— John von Neumann",
+    quote2Text: "[Yale University Professor quote - to be edited]",
+    quote2Cite: "— Yale University Professor",
+    quote3Text: "[Brian Kelly - parsimonious model rebuttal quote - to be edited]",
+    quote3Cite: "— Brian Kelly",
     roadmapTitle: "Technology Roadmap",
     phase1Label: "Current",
     phase1Text: "Classical optimization engine + Web platform",
@@ -250,5 +280,22 @@ document.addEventListener('DOMContentLoaded', () => {
       ? '감사합니다! 담당자가 확인 후 연락드리겠습니다.' 
       : 'Thank you! We will contact you shortly.';
     setTimeout(() => note.textContent = '', 5000);
+  });
+
+  // Quote toggle functionality
+  document.querySelectorAll('.quote-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const quoteContent = btn.nextElementSibling;
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      
+      btn.setAttribute('aria-expanded', !isExpanded);
+      quoteContent.hidden = isExpanded;
+      
+      // Update button text
+      const toggleText = isExpanded 
+        ? (i18n[currentLang]?.quoteToggle || '💬 인용구 보기')
+        : (i18n[currentLang]?.quoteToggleClose || '💬 인용구 접기');
+      btn.textContent = toggleText;
+    });
   });
 });
