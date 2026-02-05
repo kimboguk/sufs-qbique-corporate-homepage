@@ -230,78 +230,6 @@ a:hover { text-decoration: underline; }
   font-size: .95rem;
 }
 
-/* Tech Keyword Badge */
-.tech-keyword {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #07070b;
-  font-size: .75rem;
-  font-weight: 700;
-  padding: .3rem .75rem;
-  border-radius: 999px;
-  margin-bottom: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-
-/* Quote Toggle Button */
-.quote-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  margin-top: 1rem;
-  padding: .5rem .75rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: .5rem;
-  color: var(--text-dim);
-  font-size: .85rem;
-  cursor: pointer;
-  transition: all .2s ease;
-}
-.quote-toggle:hover {
-  background: var(--bg-muted);
-  color: var(--brand);
-  border-color: var(--brand);
-}
-.quote-toggle[aria-expanded="true"] {
-  background: var(--bg-muted);
-  border-color: var(--brand);
-}
-
-/* Quote Content */
-.quote-content {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: var(--bg);
-  border-left: 3px solid var(--brand);
-  border-radius: 0 .5rem .5rem 0;
-  animation: fadeIn .3s ease;
-}
-.quote-content[hidden] {
-  display: none;
-}
-.quote-content blockquote {
-  margin: 0;
-}
-.quote-content blockquote p {
-  font-style: italic;
-  color: var(--text);
-  margin-bottom: .5rem;
-  line-height: 1.5;
-}
-.quote-content blockquote cite {
-  display: block;
-  font-size: .85rem;
-  color: var(--brand);
-  font-style: normal;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* Roadmap */
 .roadmap {
   background: var(--card);
@@ -357,7 +285,7 @@ a:hover { text-decoration: underline; }
   position: relative;
 }
 .pricing-featured::before {
-  content: 'ì¶”ì²œ';
+  content: '추천';
   position: absolute;
   top: -10px;
   left: 50%;
@@ -388,7 +316,7 @@ a:hover { text-decoration: underline; }
   border-bottom: none;
 }
 .pricing-features li::before {
-  content: 'âœ“';
+  content: '✔';
   color: var(--brand);
   margin-right: .5rem;
 }
