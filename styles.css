@@ -327,6 +327,9 @@ a:hover { text-decoration: underline; }
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
+.customer-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 .customer-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -397,7 +400,7 @@ a:hover { text-decoration: underline; }
   .value-grid { grid-template-columns: repeat(2, 1fr); }
   .tech-grid, .tech-grid-3 { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
-  .customer-grid { grid-template-columns: 1fr; }
+  .customer-grid, .customer-grid-3 { grid-template-columns: 1fr; }
   .roadmap-items { flex-direction: column; }
 }
 
