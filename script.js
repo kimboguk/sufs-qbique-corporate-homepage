@@ -23,6 +23,17 @@ const i18n = {
     problem3Body: "시장 상황 변화에 신속하게 전략을 조정하고 새로운 기법을 도입해야 합니다.",
     problemNote: "",
     
+    needsTitle: "잠재 고객별 핵심 니즈",
+    needsLead: "각 고객군이 직면한 고유한 과제와 Qbique가 제공하는 가치",
+    needs1Title: "🏛️ 제도권 금융기관",
+    needs1Body: "규제 반영 다중 제약 최적화, 기존 시스템과의 API 통합, 감사 추적이 가능한 운용 프로세스",
+    needs2Title: "📈 헤지펀드 / 패밀리 오피스",
+    needs2Body: "빠른 도입과 자유로운 실험, 최고 수준의 성과 추구, 차별화된 전략 구현 환경",
+    needs3Title: "🔗 데이터 / 기술 파트너",
+    needs3Body: "자사 데이터·기술의 부가가치화, 공동 서비스 개발을 통한 생태계 기반 협업",
+    needs4Title: "👤 개인 투자자",
+    needs4Body: "높은 접근성과 직관적인 포트폴리오 구성, 검증된 기관용 기술을 합리적 비용으로 활용 (투자자문 라이선스 취득 후 서비스 제공)",
+    
     solutionTitle: "Qbique 포트폴리오 최적화 플랫폼",
     solutionLead: "금융 포트폴리오 운용의 전 과정을 하나의 플랫폼에서 관리할 수 있는 환경을 제공합니다.",
     value1Title: "통합성",
@@ -42,7 +53,7 @@ const i18n = {
     feature3Title: "문제 정의 및 리포팅",
     feature3Body: "직관적인 웹 기반 인터페이스로 최적화 문제를 쉽게 정의할 수 있습니다. 생성형 AI를 활용한 보고서 자동 생성 기능으로 의사결정 과정의 추적과 문서화를 지원합니다.",
     feature4Title: "ChatDevOps",
-    feature4Body: "생성형 AI 챗봇을 통해 플랫폼의 모든 기능에 접근합니다. 사용자 모드에서는 Qbique가 개발한 최신 모델을 선택적으로 적용하여 포트폴리오를 구성하고, 전문가 모드에서는 AI 에이전트로 연결된 생성형 AI 도구를 통해 필요한 모델과 전략을 직접 구현하여 반영할 수 있습니다.",
+    feature4Body: "생성형 AI 챗봇을 통해 플랫폼의 모든 기능에 접근합니다. 사용자 모드에서는 Qbique가 개발한 최신 모델을 선택적으로 적용하여 포트폴리오를 구성하고, 전문가 모드에서는 AI 에이전트로 연결된 생성형 AI 도구를 통해 필요한 모델과 전략을 직접 구현하여 반영할 수 있습니다. CLI/SDK를 포함한 프로그래밍 방식의 플랫폼 접근도 지원합니다.",
     
     technologyTitle: "기술적 차별점",
     techKeyword1: "효율성",
@@ -128,6 +139,17 @@ const i18n = {
     problem3Body: "Strategies must be quickly adjusted to market changes while adopting new techniques.",
     problemNote: "",
     
+    needsTitle: "Customer Needs by Segment",
+    needsLead: "Unique challenges each customer segment faces and the value Qbique delivers",
+    needs1Title: "🏛️ Institutional Investors",
+    needs1Body: "Regulation-aware multi-constraint optimization, API integration with existing systems, auditable portfolio management processes",
+    needs2Title: "📈 Hedge Funds / Family Offices",
+    needs2Body: "Rapid adoption with freedom to experiment, pursuit of top-tier performance, differentiated strategy implementation environment",
+    needs3Title: "🔗 Data & Technology Partners",
+    needs3Body: "Monetize proprietary data and technology, ecosystem-based collaboration through joint service development",
+    needs4Title: "👤 Individual Investors",
+    needs4Body: "High accessibility with intuitive portfolio construction, access to proven institutional-grade technology at reasonable cost (available after obtaining investment advisory license)",
+    
     solutionTitle: "Qbique Portfolio Optimization Platform",
     solutionLead: "We provide an environment where the entire portfolio management process can be managed in one platform.",
     value1Title: "Integration",
@@ -147,7 +169,7 @@ const i18n = {
     feature3Title: "Problem Definition & Reporting",
     feature3Body: "Define optimization problems easily through an intuitive web-based interface. Generative AI-powered automated report generation supports decision tracking and documentation.",
     feature4Title: "ChatDevOps",
-    feature4Body: "Access all platform features through a generative AI chatbot. In user mode, selectively apply Qbique's latest models for portfolio construction. In expert mode, implement custom models and strategies directly through AI agent-connected generative AI tools.",
+    feature4Body: "Access all platform features through a generative AI chatbot. In user mode, selectively apply Qbique's latest models for portfolio construction. In expert mode, implement custom models and strategies directly through AI agent-connected generative AI tools. Programmatic platform access via CLI/SDK is also supported.",
     
     technologyTitle: "Technical Differentiation",
     techKeyword1: "Efficiency",
