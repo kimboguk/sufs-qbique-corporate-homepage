@@ -53,7 +53,7 @@ const i18n = {
     feature3Title: "문제 정의 및 리포팅",
     feature3Body: "직관적인 웹 기반 인터페이스로 최적화 문제를 쉽게 정의할 수 있습니다. 생성형 AI를 활용한 보고서 자동 생성 기능으로 의사결정 과정의 추적과 문서화를 지원합니다.",
     feature4Title: "ChatDevOps",
-    feature4Body: "생성형 AI 챗봇을 통해 플랫폼의 모든 기능에 접근합니다. 사용자 모드에서는 Qbique가 개발한 최신 모델을 선택적으로 적용하여 포트폴리오를 구성하고, 전문가 모드에서는 AI 에이전트로 연결된 생성형 AI 도구를 통해 필요한 모델과 전략을 직접 구현하여 반영할 수 있습니다. CLI/SDK를 포함한 프로그래밍 방식의 플랫폼 접근도 지원합니다.",
+    feature4Body: "생성형 AI 챗봇을 통해 플랫폼의 모든 기능에 접근합니다. 사용자 모드에서는 Qbique가 개발한 최신 모델을 선택적으로 적용하여 포트폴리오를 구성하고, 전문가 모드에서는 AI 에이전트로 연결된 생성형 AI 도구를 통해 필요한 모델과 전략을 직접 구현하여 반영할 수 있습니다. CLI를 통한 프로그래밍 방식의 플랫폼 접근도 지원합니다.",
     
     technologyTitle: "기술적 차별점",
     techKeyword1: "효율성",
@@ -169,7 +169,7 @@ const i18n = {
     feature3Title: "Problem Definition & Reporting",
     feature3Body: "Define optimization problems easily through an intuitive web-based interface. Generative AI-powered automated report generation supports decision tracking and documentation.",
     feature4Title: "ChatDevOps",
-    feature4Body: "Access all platform features through a generative AI chatbot. In user mode, selectively apply Qbique's latest models for portfolio construction. In expert mode, implement custom models and strategies directly through AI agent-connected generative AI tools. Programmatic platform access via CLI/SDK is also supported.",
+    feature4Body: "Access all platform features through a generative AI chatbot. In user mode, selectively apply Qbique's latest models for portfolio construction. In expert mode, implement custom models and strategies directly through AI agent-connected generative AI tools. Programmatic platform access via CLI is also supported.",
     
     technologyTitle: "Technical Differentiation",
     techKeyword1: "Efficiency",
