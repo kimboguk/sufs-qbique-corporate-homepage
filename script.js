@@ -65,14 +65,6 @@ const i18n = {
     tech2Body: "고전 알고리즘으로 1차 최적화를 수행한 후, 양자 어닐링을 통해 더 넓은 탐색 공간에서 개선된 해를 탐색합니다. 현재 상용화된 양자 컴퓨팅 기술을 실용적으로 활용합니다.",
     tech3Title: "머신러닝 기반 수익률 전망",
     tech3Body: "시장 데이터와 다양한 팩터를 활용한 수익률 예측 모델을 제공합니다. 생성형 AI가 제공하는 시장 분석 전망이나 전문가 의견도 용이하게 반영할 수 있어, 다양한 시장 전망 시나리오 및 운용 전략을 반영할 수 있습니다.",
-    quoteToggle: "💬 Open Quote",
-    quoteToggleClose: "💬 Close Quote",
-    quote1Text: "We formulate desiderata which will serve as a gauge of success in our subsequent considerations; but it is in accordance with the usual heuristic procedure to reason about these desiderata—even before we are able to satisfiy them.",
-    quote1Cite: "— John von Neumann & Oskar Morgenstern, Theory of Games and Economic Behavior (1944)",
-    quote2Text: "If I were forced to sum up in one sentence what the Copenhagen interpretation says to me, it would be “Shut up and calculate!” But I won't shut up. I would rather celebrate the strangeness of quantum theory than deny it, ...",
-    quote2Cite: "— N. David Mermin, What's Wrong with This Pillow? (1989)",
-    quote3Text: "'Just as the ability to devise simple but evocative models is the signature of the great scientist so overelaboration and overparameterization is often the mark of mediocrity.' Box (1974)—Our theoretical analysis shows the flaw in this view.",
-    quote3Cite: "— Brian Kelly, et. al., The Virtue of Complexity in Return Prediction (2024)",
     roadmapTitle: "기술 로드맵",
     phase1Label: "현재",
     phase1Text: "고전 최적화 엔진 + 웹 플랫폼",
@@ -181,14 +173,6 @@ const i18n = {
     tech2Body: "After initial optimization with classical algorithms, quantum annealing explores a broader search space for improved solutions. Practical application of currently commercialized quantum computing technology.",
     tech3Title: "ML-Based Return Forecasting",
     tech3Body: "Return prediction models utilizing market data and various factors. Seamlessly integrates market outlook from generative AI or expert opinions, enabling diverse market forecast scenarios and portfolio strategies to be reflected.",
-    quoteToggle: "💬 View Quote",
-    quoteToggleClose: "💬 Hide Quote",
-    quote1Text: "We formulate desiderata which will serve as a gauge of success in our subsequent considerations; but it is in accordance with the usual heuristic procedure to reason about these desiderata—even before we are able to satisfiy them.",
-    quote1Cite: "— John von Neumann & Oskar Morgenstern, Theory of Games and Economic Behavior (1944)",
-    quote2Text: "If I were forced to sum up in one sentence what the Copenhagen interpretation says to me, it would be \u201CShut up and calculate!\u201D But I won't shut up. I would rather celebrate the strangeness of quantum theory than deny it, ...",
-    quote2Cite: "— N. David Mermin, What's Wrong with This Pillow? (1989)",
-    quote3Text: "\u2018Just as the ability to devise simple but evocative models is the signature of the great scientist so overelaboration and overparameterization is often the mark of mediocrity.\u2019 Box (1974)\u2014Our theoretical analysis shows the flaw in this view.",
-    quote3Cite: "— Brian Kelly, et. al., The Virtue of Complexity in Return Prediction (2024)",
     roadmapTitle: "Technology Roadmap",
     phase1Label: "Current",
     phase1Text: "Classical optimization engine + Web platform",
@@ -302,22 +286,5 @@ document.addEventListener('DOMContentLoaded', () => {
       ? '감사합니다! 담당자가 확인 후 연락드리겠습니다.' 
       : 'Thank you! We will contact you shortly.';
     setTimeout(() => note.textContent = '', 5000);
-  });
-
-  // Quote toggle functionality
-  document.querySelectorAll('.quote-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const quoteContent = btn.nextElementSibling;
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      
-      btn.setAttribute('aria-expanded', !isExpanded);
-      quoteContent.hidden = isExpanded;
-      
-      // Update button text
-      const toggleText = isExpanded 
-        ? (i18n[currentLang]?.quoteToggle || '💬 인용구 보기')
-        : (i18n[currentLang]?.quoteToggleClose || '💬 인용구 접기');
-      btn.textContent = toggleText;
-    });
   });
 });
