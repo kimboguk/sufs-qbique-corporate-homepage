@@ -220,7 +220,7 @@ const i18n = {
 let currentLang = (function detectLang() {
   const path = window.location.pathname;
   if (path.includes('/en/') || path.endsWith('/en')) return 'en';
-  return localStorage.getItem('lang') || 'ko';
+  return 'ko';
 })();
 
 function applyLang(lang) {
@@ -230,7 +230,6 @@ function applyLang(lang) {
   });
   document.documentElement.lang = lang;
   currentLang = lang;
-  localStorage.setItem('lang', lang);
 }
 
 (function initTheme(){
