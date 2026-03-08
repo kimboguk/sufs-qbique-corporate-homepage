@@ -217,7 +217,11 @@ const i18n = {
   }
 };
 
-let currentLang = localStorage.getItem('lang') || 'ko';
+let currentLang = (function detectLang() {
+  const path = window.location.pathname;
+  if (path.includes('/en/') || path.endsWith('/en')) return 'en';
+  return 'ko';
+})();
 
 function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -226,7 +230,6 @@ function applyLang(lang) {
   });
   document.documentElement.lang = lang;
   currentLang = lang;
-  localStorage.setItem('lang', lang);
 }
 
 (function initTheme(){
@@ -245,7 +248,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const langBtn = document.getElementById('langToggle');
   langBtn?.addEventListener('click', () => {
-    applyLang(currentLang === 'ko' ? 'en' : 'ko');
+    const path = window.location.pathname;
+    const isEn = path.includes('/en/') || path.endsWith('/en');
+    if (currentLang === 'ko') {
+      // ko → en: /en/ 경로로 이동
+      const base = path.replace(/\/?(index\.html)?$/, '');
+      window.location.href = base + '/en/';
+    } else {
+      // en → ko: 상위 경로로 이동
+      const base = path.replace(/\/en\/?(index\.html)?$/, '') || '/';
+      window.location.href = base + '/';
+    }
   });
 
   const toggle = document.getElementById('themeToggle');
