@@ -15,7 +15,7 @@ const i18n = {
     ctaContact: "도입 문의",
     
     problemTitle: "투자는 대중화되었지만, 도구는 여전히 트레이딩에 머물러 있습니다",
-    problemBody1: "개인 투자자에게도 분석 도구는 제공됩니다. 그러나 대부분은 단일 종목 분석과 트레이딩 전략 구현에 치중되어 있으며, 포트폴리오 수준의 리스크를 다루지 않습니다. 아무리 정교한 실시간 지표가 제공되더라도, 대부분은 시장 가격에 후행하며 노이즈 속에서 신뢰할 수 있는 신호를 포착하기 어렵고, 거래 비용까지 고려하면 단기 매매로 지속적인 우위를 확보하기는 더욱 어렵습니다. 그럼에도 이러한 도구들은 트레이딩에 최적화되어 있어, 투자자를 더 빈번한 거래로 이끄는 구조에 가깝습니다.",
+    problemBody1: "개인 투자자에게도 분석 도구는 제공됩니다. 그러나 대부분은 개별 종목 중심 분석과 트레이딩 전략 구현에 치중되어 있어서 투자자를 더 빈번한 거래로 이끄는 구조에 가깝고, 포트폴리오 수준의 리스크를 다루지 않습니다. 아무리 정교한 실시간 지표가 제공되더라도, 대부분은 시장 가격에 후행하며 노이즈 속에서 신뢰할 수 있는 신호를 포착하기 어렵고, 거래 비용까지 고려하면 단기 매매로 지속적인 우위를 확보하기는 더욱 어렵습니다.",
     problemBody2: "이를 인식한 투자자들은 ETF와 같은 상품으로 향하지만, 그 순간 투자는 완전히 수동적인 활동이 됩니다. 능동적으로 시장에 참여하되 포트폴리오 관점에서 체계적으로 운영할 수 있는 영역 — 트레이딩 도구와 패시브 상품 사이의 간극은 사실상 비어 있습니다.",
     problemClosing: "Qbique는 직관적인 사용성을 바탕으로 이 간극을 채웁니다.",
     
@@ -119,7 +119,7 @@ const i18n = {
     ctaContact: "Contact Us",
     
     problemTitle: "Investing has been democratized, but the tools remain stuck in trading",
-    problemBody1: "Analytical tools are available to individual investors. However, most are focused on single-stock analysis and trading strategy implementation, and do not address portfolio-level risk. No matter how sophisticated real-time indicators may be, most lag behind market prices and struggle to capture reliable signals amid noise—and factoring in transaction costs makes sustaining an edge through short-term trading even harder. Yet these tools remain optimized for trading, effectively steering investors toward more frequent transactions.",
+    problemBody1: "Analytical tools are available to individual investors. However, most are focused on individual stock analysis and trading strategy implementation, effectively steering investors toward more frequent transactions rather than addressing portfolio-level risk. No matter how sophisticated real-time indicators may be, most lag behind market prices and struggle to capture reliable signals amid noise—and factoring in transaction costs makes sustaining an edge through short-term trading even harder.",
     problemBody2: "Investors who recognize this turn to products like ETFs, but the moment they do, investing becomes an entirely passive activity. The space for actively participating in markets while systematically managing portfolios—the gap between trading tools and passive products—remains largely empty.",
     problemClosing: "Qbique fills this gap with intuitive usability.",
     
