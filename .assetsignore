@@ -1,0 +1,19 @@
+# Git 관련
+.git
+.gitignore
+
+# Cloudflare 도구
+.wrangler
+wrangler.jsonc
+
+# 백업 파일
+*.bak.*
+*.bak
+
+# 작업 문서
+*revision.md
+*.sh
+README.md
+
+# 숨김 파일
+.DS_Store
