@@ -22,9 +22,9 @@ const i18n = {
     needsTitle: "고객별 가치",
     needsLead: "각 고객군에게 Qbique가 제공하는 핵심 가치",
     needs1Title: "👤 개인 투자자 / 기관 관리자",
-    needs1Body: "AI Agent를 통한 원클릭 운용 실행으로 기관 수준의 포트폴리오 최적화를 직관적으로 제공. 전문 지식 없이도 기관 수준 분석에 접근 가능",
+    needs1Body: "기관 수준의 포트폴리오 최적화를 직관적으로 제공. 전문 지식 없이도 기관 수준 분석에 접근 가능",
     needs2Title: "🏛️ 기관 투자자 / 개인 전문가",
-    needs2Body: "CLI/SDK를 활용한 신규 전략 구현 및 포괄적 백테스트 수행. 규제 반영 다중 제약 최적화, 기존 시스템과의 API 통합, 감사 추적이 가능한 운용 프로세스",
+    needs2Body: "신규 전략 구현 및 포괄적 백테스트 수행. 규제 반영 다중 제약 최적화, 기존 시스템과의 API 통합, 감사 추적이 가능한 운용 프로세스",
     needs3Title: "🔗 데이터 / 기술 파트너",
     needs3Body: "자사 데이터·기술의 부가가치화, 공동 서비스 개발을 통한 생태계 기반 협업",
     
@@ -118,9 +118,9 @@ const i18n = {
     needsTitle: "Value by Customer Segment",
     needsLead: "Core value Qbique delivers to each customer segment",
     needs1Title: "👤 Individual Investors / Institutional Managers",
-    needs1Body: "One-click portfolio execution via AI Agent delivers institutional-grade optimization intuitively. Access institutional-level analysis without specialized expertise",
+    needs1Body: "Institutional-grade portfolio optimization delivered intuitively. Access institutional-level analysis without specialized expertise",
     needs2Title: "🏛️ Institutional Investors / Individual Professionals",
-    needs2Body: "Implement new strategies and run comprehensive backtests via CLI/SDK. Regulation-aware multi-constraint optimization, API integration with existing systems, auditable portfolio management processes",
+    needs2Body: "Implement new strategies and run comprehensive backtests. Regulation-aware multi-constraint optimization, API integration with existing systems, auditable portfolio management processes",
     needs3Title: "🔗 Data & Technology Partners",
     needs3Body: "Monetize proprietary data and technology, ecosystem-based collaboration through joint service development",
     
