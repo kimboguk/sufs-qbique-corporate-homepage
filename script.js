@@ -223,15 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langToggle');
   langBtn?.addEventListener('click', () => {
     const path = window.location.pathname;
-    const isEn = path.includes('/en/') || path.endsWith('/en');
     if (currentLang === 'ko') {
-      // ko → en: /en/ 경로로 이동
+      // ko → en: /en/index.html 경로로 이동
       const base = path.replace(/\/?(index\.html)?$/, '');
-      window.location.href = base + '/en/';
+      window.location.href = base + '/en/index.html';
     } else {
       // en → ko: 상위 경로로 이동
       const base = path.replace(/\/en\/?(index\.html)?$/, '') || '/';
-      window.location.href = base + '/';
+      window.location.href = base + '/index.html';
     }
   });
 
