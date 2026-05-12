@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = base + '/en/index.html';
     } else {
       // en → ko: 상위 경로로 이동
-      const base = path.replace(/\/en\/?(index\.html)?$/, '') || '/';
+      const base = path.replace(/\/en\/?(index\.html)?$/, '');
       window.location.href = base + '/index.html';
     }
   });
