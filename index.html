@@ -251,7 +251,10 @@
         <h2 class="section-title" data-i18n="contactTitle">도입 문의</h2>
         <div class="contact">
           <p data-i18n="contactInfo">플랫폼 도입 및 협력 문의: <a href="/cdn-cgi/l/email-protection#8fece0e1fbeeecfbcffeede6fefaeaa1ece0e2"><span class="__cf_email__" data-cfemail="86e5e9e8f2e7e5f2c6f7e4eff7f3e3a8e5e9eb">[email&#160;protected]</span></a></p>
-          <form class="contact-form" onsubmit="return false;" aria-label="문의 양식">
+          <form class="contact-form" aria-label="문의 양식">
+            <div aria-hidden="true" style="position:absolute;left:-9999px;">
+              <label>Leave this empty<input type="text" name="honeypot" tabindex="-1" autocomplete="off" /></label>
+            </div>
             <label>
               <span data-i18n="formName">성함</span>
               <input type="text" name="name" required />

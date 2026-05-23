@@ -264,15 +264,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Demo form handler
+  // Contact form handler
   const form = document.querySelector('.contact-form');
   const note = document.getElementById('formNote');
-  form?.addEventListener('submit', (e) => {
+  const sendBtn = document.getElementById('sendBtn');
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!note) return;
-    note.textContent = currentLang === 'ko' 
-      ? '감사합니다! 담당자가 확인 후 연락드리겠습니다.' 
-      : 'Thank you! We will contact you shortly.';
-    setTimeout(() => note.textContent = '', 5000);
+    if (!note || !sendBtn) return;
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      company: formData.get('company'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+      honeypot: formData.get('honeypot'),
+    };
+
+    // Loading state
+    sendBtn.disabled = true;
+    sendBtn.textContent = currentLang === 'ko' ? '전송 중...' : 'Sending...';
+    note.textContent = '';
+    note.className = 'form-note';
+
+    try {
+      const res = await fetch('https://form.qbique.co.kr/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        note.textContent = currentLang === 'ko'
+          ? '감사합니다! 담당자가 확인 후 연락드리겠습니다.'
+          : 'Thank you! We will contact you shortly.';
+        note.className = 'form-note form-note-success';
+        form.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      note.textContent = currentLang === 'ko'
+        ? '전송에 실패했습니다. 이메일로 직접 문의해 주세요.'
+        : 'Failed to send. Please contact us directly via email.';
+      note.className = 'form-note form-note-error';
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.textContent = currentLang === 'ko' ? '문의하기' : 'Submit';
+      setTimeout(() => { note.textContent = ''; note.className = 'form-note'; }, 7000);
+    }
   });
 });

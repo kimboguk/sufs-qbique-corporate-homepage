@@ -251,7 +251,10 @@
         <h2 class="section-title" data-i18n="contactTitle">Contact Us</h2>
         <div class="contact">
           <p data-i18n="contactInfo">For platform adoption and partnership inquiries: <a href="/cdn-cgi/l/email-protection#93f0fcfde7f2f0e7d3e2f1fae2e6f6bdf0fcfe"><span class="__cf_email__" data-cfemail="2a4945445e4b495e6a5b48435b5f4f04494547">[email&#160;protected]</span></a></p>
-          <form class="contact-form" onsubmit="return false;" aria-label="Contact form">
+          <form class="contact-form" aria-label="Contact form">
+            <div aria-hidden="true" style="position:absolute;left:-9999px;">
+              <label>Leave this empty<input type="text" name="honeypot" tabindex="-1" autocomplete="off" /></label>
+            </div>
             <label>
               <span data-i18n="formName">Name</span>
               <input type="text" name="name" required />
