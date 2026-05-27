@@ -85,7 +85,7 @@ const i18n = {
     
     
     contactTitle: "도입 문의",
-    contactInfo: "플랫폼 도입 및 협력 문의: <a href='mailto:contact@qbique.com'>contact@qbique.com</a>",
+    contactInfo: "플랫폼 도입 및 협력 문의: <a href='mailto:contact@qbique.co.kr'>contact@qbique.co.kr</a>",
     formName: "성함",
     formCompany: "소속",
     formEmail: "이메일",
@@ -181,7 +181,7 @@ const i18n = {
     
     
     contactTitle: "Contact Us",
-    contactInfo: "For platform adoption and partnership inquiries: <a href='mailto:contact@qbique.com'>contact@qbique.com</a>",
+    contactInfo: "For platform adoption and partnership inquiries: <a href='mailto:contact@qbique.co.kr'>contact@qbique.co.kr</a>",
     formName: "Name",
     formCompany: "Company",
     formEmail: "Email",
