@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toward Practical Quantum Advantage in Fault-tolerant Gate-based Quantum Computing | Qbique Tech Perspectives</title>
+  <meta name="description" content="A technical perspective on fault-tolerant quantum computing with a focus on trapped ions, and where practical quantum advantage is expected in real application problems." />
+  <meta name="author" content="Boguk Kim" />
+  <link rel="canonical" href="https://qbique.co.kr/en/perspectives/ftqc-practical-quantum-advantage-202610/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Qbique" />
+  <meta property="og:title" content="Toward Practical Quantum Advantage in Fault-tolerant Gate-based Quantum Computing" />
+  <meta property="og:description" content="A technical perspective on fault-tolerant quantum computing with a focus on trapped ions — Boguk Kim, October 2026" />
+  <meta property="og:url" content="https://qbique.co.kr/en/perspectives/ftqc-practical-quantum-advantage-202610/" />
+  <meta property="og:image" content="https://qbique.co.kr/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/og-cover.png" />
+  <meta property="article:author" content="Boguk Kim" />
+  <meta property="article:published_time" content="2026-10-25" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Q</text></svg>">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/en/" class="brand" aria-label="Go to home">
+        <img src="/logo.png" alt="Qbique" class="brand-logo" />
+        <span class="brand-name" data-i18n="brand">Qbique</span>
+      </a>
+
+      <nav class="nav" aria-label="Main menu">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="/en/#problem" data-i18n="menuProblem">Market</a></li>
+          <li><a href="/en/#solution" data-i18n="menuSolution">Solution</a></li>
+          <li><a href="/en/#features" data-i18n="menuFeatures">Features</a></li>
+          <li><a href="/en/#technology" data-i18n="menuTechnology">Technology</a></li>
+          <li><a href="/en/#pricing" data-i18n="menuPricing">Services</a></li>
+          <li><a href="/en/#contact" data-i18n="menuContact">Contact</a></li>
+          <li><button id="themeToggle" class="theme-toggle" title="Toggle theme">🌓</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="article">
+    <article class="article-inner">
+
+      <!-- Title -->
+      <header>
+        <p class="article-eyebrow">Tech Perspectives · October 2026</p>
+        <h1 class="article-title">Toward Practical Quantum Advantage in Fault-tolerant Gate-based Quantum Computing</h1>
+        <p class="article-subtitle">A Technical Perspective</p>
+        <div class="article-meta">
+          <span><strong>Boguk Kim</strong></span>
+          <time datetime="2026-10">October 2026</time>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section id="summary" class="article-section">
+        <p class="article-kicker">Summary · Contents</p>
+        <div class="callout summary-block">
+          <span class="callout-label">Objective</span>
+          <ul>
+            <li>To deliver a technical perspective on <em class="key">fault-tolerant quantum computing</em> with a focus on <em class="key">trapped ions</em> in plain words</li>
+            <li>To introduce <em class="key">practical quantum advantage</em> in real application problems for potential users of quantum computing</li>
+          </ul>
+        </div>
+        <div class="callout summary-block">
+          <span class="callout-label">Main theme</span>
+          <ul>
+            <li>Practical quantum advantage beyond the reach of classical computation is expected to be achieved in the areas of <em class="key">quantum chemistry and material simulation</em> either by pure quantum computing or through quantum-classical hybrid approaches.</li>
+            <li>Trapped ions have strong potential for <em class="key">reducing the qubit overhead</em> by virtue of highly efficient error-correcting codes based on high gate fidelity and outstanding connectivity.</li>
+          </ul>
+        </div>
+
+        <h3>Contents</h3>
+        <ol class="toc">
+          <li><a href="#s01"><span>01</span>What is quantum computing</a></li>
+          <li><a href="#s02"><span>02</span>Modalities</a></li>
+          <li><a href="#s03"><span>03</span>Fault-Tolerant Quantum Computing (FTQC)</a></li>
+          <li><a href="#s04"><span>04</span>Walking cat architecture</a></li>
+          <li><a href="#s05"><span>05</span>Qubit efficiency</a></li>
+          <li><a href="#s06"><span>06</span>Limitations</a></li>
+          <li><a href="#s07"><span>07</span>Practical quantum advantage</a></li>
+          <li><a href="#s08"><span>08</span>Architecture enhancement</a></li>
+          <li><a href="#s09"><span>09</span>Further directions</a></li>
+          <li><a href="#s10"><span>10</span>Demonstration examples</a></li>
+          <li><a href="#s11"><span>11</span>Quantum Approximate Optimization Algorithm (QAOA)</a></li>
+          <li><a href="#s12"><span>12</span>Glossary</a></li>
+          <li><a href="#s13"><span>13</span>References</a></li>
+          <li><a href="#s14"><span>14</span>Appendix</a></li>
+        </ol>
+      </section>
+
+      <!-- 01 -->
+      <section id="s01" class="article-section">
+        <p class="article-kicker">01 | What is quantum computing</p>
+        <h2>Quantum computing is a new computing paradigm that processes exponentially large computational domains utilizing the principles of quantum mechanics.</h2>
+
+        <h3>Types of Quantum Computing<sup>1</sup></h3>
+        <table class="data-table is-stacked">
+          <thead>
+            <tr><th scope="col"></th><th scope="col">Annealing <a class="cite" href="#ref-1">[1]</a></th><th scope="col">Gate-based <a class="cite" href="#ref-2">[2]</a></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Type</td><td data-label="Annealing">Analog</td><td data-label="Gate-based"><em class="key">Digital</em></td></tr>
+            <tr>
+              <td>Mechanism</td>
+              <td data-label="Annealing"><ul><li>Maps a physical qubit state to a variable to be solved for</li><li>Searches for the minimum energy state of entangled qubits via an adiabatic process</li></ul></td>
+              <td data-label="Gate-based"><ul><li>Sequence of <em class="key">quantum gate operations</em></li></ul></td>
+            </tr>
+            <tr>
+              <td>Problems to solve</td>
+              <td data-label="Annealing">Optimization problems expressed in QUBO<sup>2</sup> (e.g., Ising)</td>
+              <td data-label="Gate-based"><ul><li>Factoring</li><li>Chemistry simulation</li><li>Optimization</li></ul></td>
+            </tr>
+            <tr><td>Results</td><td data-label="Annealing">Heuristic approximation from multiple trials</td><td data-label="Gate-based">Exact or approximate</td></tr>
+            <tr>
+              <td>Strengths</td>
+              <td data-label="Annealing"><ul><li>Relatively simple architecture</li><li>Relatively easy to scale</li></ul></td>
+              <td data-label="Gate-based"><ul><li><em class="key">Universal computation</em></li><li>Error correction</li></ul></td>
+            </tr>
+            <tr>
+              <td>Weaknesses</td>
+              <td data-label="Annealing"><ul><li>Limited to optimization</li></ul></td>
+              <td data-label="Gate-based"><ul><li>Complex architecture</li><li>Hard to scale</li></ul></td>
+            </tr>
+            <tr><td>Companies</td><td data-label="Annealing">D-Wave</td><td data-label="Gate-based">IonQ, Quantinuum, IBM, Google, etc.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout"><p><em class="key">Gate-based quantum computing</em> is the main theme of this perspective.</p></div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">1</span>There is another type of approach, measurement-based quantum computing (MBQC), mainly pursued in photonic architectures <a class="cite" href="#ref-3">[3]</a>.</li>
+          <li><span class="fn-num">2</span>Quadratic Unconstrained Binary Optimization</li>
+        </ol>
+      </section>
+
+      <!-- 02 -->
+      <section id="s02" class="article-section">
+        <p class="article-kicker">02 | Modalities</p>
+        <h2>Trapped ions are among the most promising modalities of quantum computing hardware based on the current state of development.</h2>
+
+        <h3>Modalities of quantum computing hardware</h3>
+        <table class="data-table is-stacked">
+          <thead>
+            <tr><th scope="col">Modality</th><th scope="col">Pros</th><th scope="col">Cons</th><th scope="col">Companies</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Superconducting circuits <a class="cite" href="#ref-4">[4]</a></td>
+              <td data-label="Pros"><ul><li>Fast gate operations</li><li>High gate fidelity</li></ul></td>
+              <td data-label="Cons"><ul><li>Nearest-neighbor connectivity only</li><li>Wiring and cryogenic cooling bottlenecks</li><li>Manufacturing variation</li></ul></td>
+              <td data-label="Companies">IBM<br />Google<br />IQM</td>
+            </tr>
+            <tr class="is-highlight">
+              <td>Trapped ions <a class="cite" href="#ref-5">[5]</a></td>
+              <td data-label="Pros"><ul><li><em class="key">Highest gate fidelity</em></li><li>Long coherence time</li><li><em class="key">High qubit connectivity</em> by ion shuttling</li><li>Identical qubits</li></ul></td>
+              <td data-label="Cons"><ul><li>Slow gate operations</li><li>Overhead of ion transport and cooling</li><li>Ion loss</li></ul></td>
+              <td data-label="Companies">IonQ<br />Quantinuum</td>
+            </tr>
+            <tr>
+              <td>Neutral atoms <a class="cite" href="#ref-6">[6]</a></td>
+              <td data-label="Pros"><ul><li>Scalability</li><li>Free configuration by moving atoms</li><li>Parallel operations</li><li>Identical qubits</li></ul></td>
+              <td data-label="Cons"><ul><li>Slow operations</li><li>Lower gate fidelity than ions</li><li>Atom loss</li></ul></td>
+              <td data-label="Companies">QuEra<br />Pasqal<br />Atom Computing</td>
+            </tr>
+            <tr>
+              <td>Photons <a class="cite" href="#ref-7">[7]</a></td>
+              <td data-label="Pros"><ul><li>Mostly room-temperature operation</li><li>Semiconductor manufacturing</li></ul></td>
+              <td data-label="Cons"><ul><li>Photon loss</li></ul></td>
+              <td data-label="Companies">PsiQuantum<br />Xanadu</td>
+            </tr>
+            <tr>
+              <td>Silicon spins<sup>3</sup> <a class="cite" href="#ref-8">[8]</a></td>
+              <td data-label="Pros"><ul><li>Semiconductor manufacturing</li></ul></td>
+              <td data-label="Cons"><ul><li>Manufacturing variation</li><li>Nearest-neighbor connectivity</li></ul></td>
+              <td data-label="Companies">Intel<br />Diraq<br />Quantum Motion</td>
+            </tr>
+            <tr>
+              <td>NV<sup>4</sup> centers <a class="cite" href="#ref-9">[9]</a></td>
+              <td data-label="Pros"><ul><li>Very long coherence time</li><li>Room-temperature operation</li></ul></td>
+              <td data-label="Cons"><ul><li>Hard to entangle and scale</li></ul></td>
+              <td data-label="Companies">Mainly used for quantum sensing</td>
+            </tr>
+            <tr>
+              <td>Topological states <a class="cite" href="#ref-10">[10]</a></td>
+              <td data-label="Pros"><ul><li>Qubit stability (theoretical)</li></ul></td>
+              <td data-label="Cons"><ul><li>Difficult control of qubits</li></ul></td>
+              <td data-label="Companies">Microsoft</td>
+            </tr>
+            <tr>
+              <td>NMR<sup>5</sup> <a class="cite" href="#ref-11">[11]</a></td>
+              <td data-label="Pros"><ul><li>Simple architecture</li></ul></td>
+              <td data-label="Cons"><ul><li>Not scalable</li></ul></td>
+              <td data-label="Companies">Mainly for education</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">3</span>Quantum dots</li>
+          <li><span class="fn-num">4</span>Nitrogen-vacancy</li>
+          <li><span class="fn-num">5</span>Nuclear magnetic resonance</li>
+        </ol>
+      </section>
+
+      <!-- 03 -->
+      <section id="s03" class="article-section">
+        <p class="article-kicker">03 | Fault-Tolerant Quantum Computing (FTQC)</p>
+        <h2>Genuine quantum advantage comes from error correction.</h2>
+
+        <div class="article-section-wide">
+          <div class="figure-grid">
+            <figure class="figure">
+              <figcaption>Two-qubit gate fidelity (trapped ions)</figcaption>
+              <div class="figure-frame">
+                <a href="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-fidelity.webp" target="_blank" rel="noopener" aria-label="Open full-size figure"><img src="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-fidelity.webp" width="1725" height="1201" loading="lazy"
+                  alt="Scatter plot of two-qubit gate error on a log scale from 2003 to 2025. Research records: NIST 97.0% (2003), Innsbruck 99.3% (2008), NIST 99.92% (2016), Oxford 99.8% (2018), Oxford Ionics 99.97% (2024), IonQ / Oxford Ionics 99.99% (2025). Commercial systems: IonQ Aria 99.6%, Quantinuum H1-1 99.91%, Helios 99.92%. The fit to research records shows a 10.5-fold reduction in error per decade (R² = 0.93)." /></a>
+              </div>
+            </figure>
+            <figure class="figure">
+              <figcaption>Number of qubits in commercialized trapped-ion quantum computers</figcaption>
+              <div class="figure-frame">
+                <a href="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-qubits.webp" target="_blank" rel="noopener" aria-label="Open full-size figure"><img src="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-qubits.webp" width="1706" height="1201" loading="lazy"
+                  alt="Log-scale chart of qubit counts from 2022 to 2030. Released systems: Aria 21, Forte 36, Tempo 100, growing 1.7 times per year. Roadmap targets for physical qubits: Superion 256 (2026), 10,000 (2027), 20,000 (2028), 200,000 (2029), 2,000,000 (2030), growing 8.1 times per year. Roadmap targets for logical qubits: 12, 800, 1,600, 8,000, 80,000." /></a>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">Insight</span>
+          <ol>
+            <li>Error rates keep improving, but more efficient error correction is required to achieve practical quantum advantage.</li>
+            <li>The growth rate of qubit numbers is projected to accelerate, making it possible to <em class="key">buy computation time with qubits</em>.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section id="s04" class="article-section">
+        <p class="article-kicker">04 | Walking cat architecture</p>
+        <h2>Error correction efficiency is expected to improve further by moving ions to connect distant qubits.</h2>
+
+        <figure class="figure">
+          <figcaption>Walking cat architecture <a class="cite" href="#ref-12">[12]</a></figcaption>
+          <div class="figure-frame">
+                <a href="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-walking-cat.webp" target="_blank" rel="noopener" aria-label="Open full-size figure"><img src="/en/perspectives/ftqc-practical-quantum-advantage-202610/figures/fig-walking-cat.webp" width="2000" height="818" loading="lazy"
+              alt="Chip layout where components tile across a 2D grid: a Bell factory (B) feeds cat factories (C), whose cat states walk to memory blocks (M) holding logical qubits in a qLDPC code and to a magic factory (T) producing T-gate resource states; a qubit factory (Q) refills spare ions on loss. Inside a memory block, rows of data ions, ancilla ions that move via a highway for error checks, beacons that detect ion loss, and a local reservoir of spare ions for fast replacement." /></a>
+              </div>
+          <p class="figure-note">Simplified illustration adapted from <a class="cite" href="#ref-12">[12]</a> (Fig. 2, Fig. 4)</p>
+        </figure>
+
+        <h3>Advantage of walking cat architecture</h3>
+        <div class="card-row card-row-2">
+          <div class="info-card"><h4 class="plain"><span class="num">01</span><span><em class="key">Lost ions replenished</em> from separate factories transported to data nodes physically</span></h4></div>
+          <div class="info-card"><h4 class="plain"><span class="num">02</span><span>Simple 2D planar structure → <em class="key">easy to scale</em> and modularize</span></h4></div>
+        </div>
+
+        <div class="callout">
+          <ol>
+            <li>The cat state is the GHZ (Greenberger–Horne–Zeilinger) state or the generalized Bell state, which is maximally entangled<sup>6</sup> in the form of <span class="math">(|0…000⟩ + |1…111⟩)/√2</span>.</li>
+            <li>The ion shuttling time is expected to be about <em class="key">an order of magnitude less</em> than the gate operation time<sup>7</sup>.</li>
+          </ol>
+        </div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">6</span>The partial trace of the associated density matrix, leaving a k-qubit subsystem, is I/2<sup>k</sup> <a class="cite" href="#ref-13">[13]</a>.</li>
+          <li><span class="fn-num">7</span>The ion shuttling time is assumed to be about 1/20 of the gate operation time, ignoring the effects of ion preparation and reloading.</li>
+        </ol>
+      </section>
+
+      <!-- 05 -->
+      <section id="s05" class="article-section">
+        <p class="article-kicker">05 | Qubit efficiency</p>
+        <h2>qLDPC<sup>8</sup> in the walking cat architecture requires far fewer physical qubits to store the same logical information <a class="cite" href="#ref-12">[12]</a>.</h2>
+
+        <h3>Comparison [[n, k, d]] = [[102, 22, 9]]<sup>9</sup> vs. surface code — the number of data qubits<sup>10</sup></h3>
+        <div class="compare">
+          <div class="compare-box is-primary">
+            <p class="compare-label">[[102, 22, 9]]</p>
+            <p class="compare-value">102</p>
+            <p class="compare-formula">&nbsp;</p>
+            <div class="compare-bar" aria-hidden="true"><span style="width: 5.7%"></span></div>
+          </div>
+          <span class="compare-vs">vs</span>
+          <div class="compare-box">
+            <p class="compare-label">surface code</p>
+            <p class="compare-value">1782</p>
+            <p class="compare-formula">(= k × d<sup>2</sup>)</p>
+            <div class="compare-bar" aria-hidden="true"><span style="width: 100%"></span></div>
+          </div>
+        </div>
+
+        <div class="callout"><p><em class="key">About 17 times fewer</em> data qubits are required in the walking cat architecture for the same level of error-correction capability.</p></div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">8</span>Quantum low-density parity-check codes linking distant qubits <a class="cite" href="#ref-14">[14]</a></li>
+          <li><span class="fn-num">9</span>Data qubits n=102, logical qubits k=22, distance d=9</li>
+          <li><span class="fn-num">10</span>The actual number of physical qubits is a few times more than the number of data qubits; for instance, ancilla qubits are additionally required for both cases.</li>
+        </ol>
+      </section>
+
+      <!-- 06 -->
+      <section id="s06" class="article-section">
+        <p class="article-kicker">06 | Limitations</p>
+        <h2>The operation speed and readout restrict practicality.</h2>
+
+        <h3>The current status of gate operation speeds<sup>11</sup></h3>
+        <div class="card-row card-row-3">
+          <div class="info-card">
+            <h4>Trapped ions (walking cat architecture) <a class="cite" href="#ref-12">[12]</a></h4>
+            <p class="label">Gate operation time (2-qubit gate)</p>
+            <p class="stat">~ 0.2×10<sup>-3</sup> second</p>
+            <p class="stat">~ 10<sup>6</sup> logical T-gate operations per day</p>
+          </div>
+          <div class="info-card">
+            <h4>Superconducting circuits <a class="cite" href="#ref-15">[15]</a></h4>
+            <p class="label">Error-correction cycle time</p>
+            <p class="stat">~ 10<sup>-6</sup> second per cycle</p>
+          </div>
+          <div class="info-card">
+            <h4>Classical CPU</h4>
+            <p class="label">Bit operation time</p>
+            <p class="stat">~ 10<sup>-9</sup> second</p>
+            <p class="stat">~ 10<sup>10</sup> bit operations per second</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">Readout issue</span>
+          <p>Even though entangled n-qubits can process an exponentially large amount of information, only a single n-bit outcome is retrieved upon measurement.</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">Insight</span>
+          <ol>
+            <li>Presently quantum gate operations are <em class="key">much slower</em> than classical counterparts, and <em class="key">faster gates come at the cost of lower fidelity</em>.</li>
+            <li>Quantum advantage lies in processing a large state space effectively to <em class="key">extract only a small amount of information</em>, not in retrieving all the information at once, unlike in classical computing.</li>
+          </ol>
+        </div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">11</span>Values measured on different bases are shown for reference only.</li>
+        </ol>
+      </section>
+
+      <!-- 07 -->
+      <section id="s07" class="article-section">
+        <p class="article-kicker">07 | Practical quantum advantage</p>
+        <h2>Practical quantum advantage comes from application problems beyond the reach of classical computation, solved by quantum computing alone or through quantum-classical hybrid approaches<sup>12</sup>.</h2>
+
+        <h3>Classification of application areas by practical quantum advantage</h3>
+
+        <div class="tier tier-1">
+          <h4 class="tier-head">Areas where practical quantum advantage is expected</h4>
+          <div class="tier-body">
+            <ul>
+              <li>Breaking public-key cryptosystems based on RSA or elliptic curves through <em class="key">Shor’s algorithm</em>, which shows a clear exponential advantage over classical algorithms through QFT and phase estimation <a class="cite" href="#ref-16">[16]</a></li>
+              <li>Molecular electronic structure or binding energy problems in <em class="key">quantum chemistry</em> that require formulations more general than the Heisenberg model <a class="cite" href="#ref-17">[17]</a>, not the generalized Ising model represented in QUBO</li>
+              <li><em class="key">Turbulent flows</em>, other than vortices or eddies with distinct patterns, whose profiles are not effectively described by a low-order MPS<sup>13</sup> representation and have nontrivial Fourier coefficients distributed randomly over wide ranges, when only a few core physical properties are extracted, not requiring many readouts <a class="cite" href="#ref-18">[18]</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><p>The classical benchmarks keep rising, e.g., transformer-based quantum states for interacting electrons <a class="cite" href="#ref-22">[22]</a>, and the advantage may be <em class="key">polynomial rather than exponential</em> <a class="cite" href="#ref-17">[17]</a>.</p></div>
+
+        <div class="tier tier-2">
+          <h4 class="tier-head">Areas where practical quantum advantage may exist but trapped ions are possibly inferior to other modalities and limited due to slower operations</h4>
+          <div class="tier-body">
+            <ul>
+              <li>Ising problems that can be transformed into QUBO for which <em class="key">annealing may be more effective</em> <a class="cite" href="#ref-19">[19]</a></li>
+              <li>Deciphering symmetric-key systems such as AES through Grover’s algorithm featuring a <em class="key">quadratic advantage</em> <a class="cite" href="#ref-20">[20]</a></li>
+              <li>Calculation of financial portfolio risk functions with quadratic advantage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><p>Assuming FTQC, the scope of practical quantum advantage can expand considerably as the <em class="key">gate operation speed</em> becomes faster and vary depending on which modality is used.</p></div>
+
+        <div class="tier tier-3">
+          <h4 class="tier-head">Areas where no clear practical quantum advantage is expected</h4>
+          <div class="tier-body">
+            <ul>
+              <li>General CFD<sup>14</sup> problems that can be handled through a <em class="key">low-order MPS</em> representation <a class="cite" href="#ref-21">[21]</a>, requiring <em class="key">many readouts</em> to check entire solution profiles in time evolution</li>
+            </ul>
+          </div>
+        </div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">12</span>Regardless of whether the advantage is exponential</li>
+          <li><span class="fn-num">13</span>Matrix product state</li>
+          <li><span class="fn-num">14</span>Computational fluid dynamics</li>
+        </ol>
+      </section>
+
+      <!-- 08 -->
+      <section id="s08" class="article-section">
+        <p class="article-kicker">08 | Architecture enhancement</p>
+        <h2>An on-chip architecture that prepares as many copies of the system as the number of readouts can trade qubits for execution time.</h2>
+
+        <h3>Suggestion of architecture enhancement</h3>
+        <div class="flow">
+          <div class="info-card">
+            <h4>Issues</h4>
+            <ul><li>In the time-evolution simulation, the entire computation must be re-executed after a readout at an intermediate time step</li></ul>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">➜</span>
+          <div class="info-card">
+            <h4>Solution suggested</h4>
+            <ul><li>Prepare <em class="key">one copy of the system per readout</em> on a single chip and run them simultaneously</li></ul>
+          </div>
+        </div>
+
+        <div class="callout"><p>An on-chip architecture may have an advantage over parallel or distributed computing because of <em class="key">less communication overhead</em>, shared factories, and direct operations between copies.</p></div>
+      </section>
+
+      <!-- 09 -->
+      <section id="s09" class="article-section">
+        <p class="article-kicker">09 | Further directions</p>
+        <h2>It is desirable to integrate different quantum technologies into a single platform to maximize the applicability of quantum computing in real industrial problems.</h2>
+
+        <h3>Directions suggested</h3>
+        <div class="card-row card-row-3">
+          <div class="info-card">
+            <h4><span class="num">01</span><span>Time crystal <a class="cite" href="#ref-23">[23]</a></span></h4>
+            <ul><li>Maintaining robust coherent states of qubits for <em class="key">quantum memory</em></li></ul>
+          </div>
+          <div class="info-card">
+            <h4><span class="num">02</span><span>On-device quantum chip <a class="cite" href="#ref-24">[24]</a></span></h4>
+            <ul><li>Robust and <em class="key">precise sensing</em> through edge devices<sup>15</sup> such as phone, car, and robots <a class="cite" href="#ref-25">[25]</a></li></ul>
+          </div>
+          <div class="info-card">
+            <h4><span class="num">03</span><span>Quantum reservoir computing</span></h4>
+            <ul><li><em class="key">Analog approach</em> for measuring, encoding, and preprocessing classical information to quantum computing <a class="cite" href="#ref-26">[26]</a></li></ul>
+          </div>
+        </div>
+
+        <div class="callout"><p>Each task is assigned to the <em class="key">best-suited technology</em> within a single platform, connecting through quantum-safe networks<sup>16</sup>. <a class="cite" href="#ref-27">[27</a>, <a class="cite" href="#ref-28">28]</a></p></div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">15</span>Photonic devices are candidates for edge devices.</li>
+          <li><span class="fn-num">16</span>Trapped ions for intensive core computing, photons for mobile on-chips, NV for sensing, etc.</li>
+        </ol>
+      </section>
+
+      <!-- 10 -->
+      <section id="s10" class="article-section">
+        <p class="article-kicker">10 | Demonstration examples</p>
+        <h2>Tangible results toward practical quantum advantage in FTQC are likely from the following examples.</h2>
+
+        <h3>Application areas and methods <a class="cite" href="#ref-29">[29]</a></h3>
+        <div class="card-row card-row-2">
+          <div class="info-card">
+            <h4><span class="num">01</span><span>Quantum chemistry <a class="cite" href="#ref-30">[30]</a></span></h4>
+            <ul>
+              <li>Variational Quantum Eigensolver (VQE)<sup>17</sup> <a class="cite" href="#ref-31">[31]</a></li>
+              <li>Quantum Phase Estimation (QPE)<sup>18</sup> <a class="cite" href="#ref-32">[32]</a></li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4><span class="num">02</span><span>Financial risk tails</span></h4>
+            <ul>
+              <li>Quantum Amplitude Estimation (QAE) <a class="cite" href="#ref-33">[33</a>, <a class="cite" href="#ref-34">34]</a></li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4><span class="num">03</span><span>Turbulent flows</span></h4>
+            <ul>
+              <li>Quantum Lattice Boltzmann Method (QLBM) <a class="cite" href="#ref-18">[18]</a></li>
+              <li>Quantum Dynamic Mode Decomposition (QDMD) <a class="cite" href="#ref-35">[35]</a></li>
+              <li>Quantum Linear Systems Algorithms (QLSA)<sup>19</sup> <a class="cite" href="#ref-36">[36]</a></li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h4><span class="num">04</span><span>Quantum Machine Learning (QML) <a class="cite" href="#ref-37">[37]</a></span></h4>
+            <ul>
+              <li>Quantum Generative Adversarial Network (QGAN) <a class="cite" href="#ref-38">[38]</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">17</span>NISQ</li>
+          <li><span class="fn-num">18</span>FTQC</li>
+          <li><span class="fn-num">19</span>HHL (Harrow-Hassidim-Lloyd) solver used for linear systems</li>
+        </ol>
+      </section>
+
+      <!-- 11 -->
+      <section id="s11" class="article-section">
+        <p class="article-kicker">11 | QAOA</p>
+        <h2>QAOA is an algorithm dealing with generalized annealing problems <a class="cite" href="#ref-39">[39]</a>, including HUBO<sup>20</sup>.</h2>
+
+        <h3>Workflow</h3>
+        <ol class="steps">
+          <li><span class="num">01</span><span>Initialize the qubits in a <em class="key">uniform superposition</em> that represents all possible binary solution states of n variables.</span></li>
+          <li><span class="num">02</span><span>The cost and mixing layers, parameterized by gamma and beta, alternately act on the qubits <em class="key">p times</em><sup>21</sup>.</span></li>
+          <li><span class="num">03</span><span>The final state is <em class="key">measured</em>.</span></li>
+        </ol>
+
+        <h3>Variations</h3>
+        <table class="data-table">
+          <tbody>
+            <tr><td>Base QAOA</td><td></td></tr>
+            <tr><td>LR-QAOA<sup>22</sup> <a class="cite" href="#ref-41">[41]</a></td><td>fixes a linear schedule to set the angle parameters, but it usually requires a large p.</td></tr>
+            <tr><td>DQAOA <a class="cite" href="#ref-42">[42]</a></td><td>divides a large problem into smaller pieces with lower complexity and gathers their results.</td></tr>
+            <tr><td>DQAOA-GPT <a class="cite" href="#ref-43">[43]</a></td><td>uses AI to construct circuits for DQAOA, which belongs to the quantum-classical hybrid approaches.</td></tr>
+            <tr><td>MA-QAOA <a class="cite" href="#ref-44">[44]</a></td><td>uses multi-angle parameters for different qubits.</td></tr>
+          </tbody>
+        </table>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">20</span>Higher-order Unconstrained Binary Optimization, in which higher-order nonlinear operators are exactly expressed as the combination of two-qubit Pauli-z and CNOT gates <a class="cite" href="#ref-40">[40]</a>.</li>
+          <li><span class="fn-num">21</span>The cost layer (gamma) consists of multi-qubit phase shift operators encoding the objective function using multiplications of the Pauli-z operator between coupled variables, thereby generating entanglement, and the mixing layer (beta) consists of one-qubit rotation (Pauli-x) operators searching the solution space. As p goes to infinity, the approximation converges to the desired optimal solution, but a larger p requires more gate operations and longer execution times.</li>
+          <li><span class="fn-num">22</span>Linear Ramp (LR) QAOA fixes a linear schedule for the angle parameters gamma and beta, but it usually requires a large p.</li>
+        </ol>
+      </section>
+
+      <!-- 12 -->
+      <section id="s12" class="article-section">
+        <p class="article-kicker">12 | Glossary</p>
+        <h2>Layman’s definition</h2>
+
+        <dl class="glossary">
+          <div><dt>Quantum mechanics</dt><dd>A branch of physics that usually describes nature at small scales</dd></div>
+          <div><dt>Quantum</dt><dd>Following the principles of quantum mechanics; originally, the discreteness of energy</dd></div>
+          <div><dt>Measurement</dt><dd>Extracting information from a system by physical interactions</dd></div>
+          <div><dt>State</dt><dd>Information about a system specifying the probabilities of all possible measurement outcomes</dd></div>
+          <div class="is-highlight">
+            <dt>Quantum state</dt>
+            <dd>
+              Superposition of base states, weighted by probability amplitudes
+              <h3>Key Properties</h3>
+              <ul>
+                <li><strong>Entanglement</strong>: a property that the joint states formed through interaction cannot be split into individual independent states</li>
+                <li><strong>Interference</strong>: a property that the probability of a measurement outcome becomes the square of the sum of the amplitudes of all contributing components</li>
+              </ul>
+            </dd>
+          </div>
+          <div><dt>Qubit</dt><dd>Information unit utilizing two controllable quantum states</dd></div>
+          <div><dt>Optimization</dt><dd>A process of finding the minimum (or maximum) of objective functions under constraints</dd></div>
+        </dl>
+      </section>
+
+      <!-- 13 -->
+      <section id="s13" class="article-section">
+        <p class="article-kicker">13 | References</p>
+        <h2>References</h2>
+
+        <ol class="references">
+          <li id="ref-1"><span class="ref-num">[1]</span><a href="https://arxiv.org/abs/1903.06559" target="_blank" rel="noopener">P. Hauke et al., Reports on Progress in Physics (2020)</a></li>
+          <li id="ref-2"><span class="ref-num">[2]</span><a href="https://doi.org/10.1017/CBO9780511976667" target="_blank" rel="noopener">M. A. Nielsen and I. L. Chuang, Cambridge University Press (2010)</a></li>
+          <li id="ref-3"><span class="ref-num">[3]</span><a href="https://doi.org/10.1103/PhysRevLett.86.5188" target="_blank" rel="noopener">R. Raussendorf and H. J. Briegel, Physical Review Letters (2001)</a></li>
+          <li id="ref-4"><span class="ref-num">[4]</span><a href="https://arxiv.org/abs/1904.06560" target="_blank" rel="noopener">P. Krantz et al., Applied Physics Reviews (2019)</a></li>
+          <li id="ref-5"><span class="ref-num">[5]</span><a href="https://arxiv.org/abs/1904.04178" target="_blank" rel="noopener">C. D. Bruzewicz, J. Chiaverini, R. McConnell, and J. M. Sage, Applied Physics Reviews (2019)</a></li>
+          <li id="ref-6"><span class="ref-num">[6]</span><a href="https://arxiv.org/abs/2006.12326" target="_blank" rel="noopener">L. Henriet et al., Quantum (2020)</a></li>
+          <li id="ref-7"><span class="ref-num">[7]</span><a href="https://arxiv.org/abs/1907.06331" target="_blank" rel="noopener">S. Slussarenko and G. J. Pryde, Applied Physics Reviews (2019)</a></li>
+          <li id="ref-8"><span class="ref-num">[8]</span><a href="https://arxiv.org/abs/2112.08863" target="_blank" rel="noopener">G. Burkard et al., Reviews of Modern Physics (2023)</a></li>
+          <li id="ref-9"><span class="ref-num">[9]</span><a href="https://arxiv.org/abs/1302.3288" target="_blank" rel="noopener">M. W. Doherty et al., Physics Reports (2013)</a></li>
+          <li id="ref-10"><span class="ref-num">[10]</span><a href="https://arxiv.org/abs/0707.1889" target="_blank" rel="noopener">C. Nayak et al., Reviews of Modern Physics (2008)</a></li>
+          <li id="ref-11"><span class="ref-num">[11]</span><a href="https://arxiv.org/abs/quant-ph/0404064" target="_blank" rel="noopener">L. M. K. Vandersypen and I. L. Chuang, Reviews of Modern Physics (2005)</a></li>
+          <li id="ref-12"><span class="ref-num">[12]</span><a href="https://arxiv.org/abs/2604.19481" target="_blank" rel="noopener">F. Tripier et al., arXiv:2604.19481 (2026)</a></li>
+          <li id="ref-13"><span class="ref-num">[13]</span><a href="https://www.preskill.caltech.edu/ph219/ph219_2015-16.html" target="_blank" rel="noopener">J. Preskill, Lecture notes for Physics 219, California Institute of Technology (2015)</a></li>
+          <li id="ref-14"><span class="ref-num">[14]</span><a href="https://arxiv.org/abs/2103.06309" target="_blank" rel="noopener">N. P. Breuckmann and J. N. Eberhardt, PRX Quantum (2021)</a></li>
+          <li id="ref-15"><span class="ref-num">[15]</span><a href="https://www.nature.com/articles/s41586-024-08449-y" target="_blank" rel="noopener">Google Quantum AI and Collaborators, Nature (2025)</a></li>
+          <li id="ref-16"><span class="ref-num">[16]</span><a href="https://arxiv.org/abs/quant-ph/9508027" target="_blank" rel="noopener">P. W. Shor, SIAM Journal on Computing (1997)</a></li>
+          <li id="ref-17"><span class="ref-num">[17]</span><a href="https://www.nature.com/articles/s41467-023-37587-6" target="_blank" rel="noopener">S. Lee et al., Nature Communications (2023)</a></li>
+          <li id="ref-18"><span class="ref-num">[18]</span><a href="https://doi.org/10.1103/PhysRevResearch.7.013036" target="_blank" rel="noopener">X. Li et al., Physical Review Research (2025)</a></li>
+          <li id="ref-19"><span class="ref-num">[19]</span><a href="https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2014.00005/full" target="_blank" rel="noopener">A. Lucas, Frontiers in Physics (2014)</a></li>
+          <li id="ref-20"><span class="ref-num">[20]</span><a href="https://arxiv.org/abs/quant-ph/9605043" target="_blank" rel="noopener">L. K. Grover, Proceedings of the 28th Annual ACM Symposium on Theory of Computing (1996)</a></li>
+          <li id="ref-21"><span class="ref-num">[21]</span><a href="https://www.nature.com/articles/s42005-024-01623-8" target="_blank" rel="noopener">R. D. Peddinti et al., Communications Physics (2024)</a></li>
+          <li id="ref-22"><span class="ref-num">[22]</span><a href="https://www.nature.com/articles/s41467-025-66844-z" target="_blank" rel="noopener">J. A. Sobral, M. Perle, and M. S. Scheurer, Nature Communications (2025)</a></li>
+          <li id="ref-23"><span class="ref-num">[23]</span><a href="https://www.nature.com/articles/s41467-024-53140-5" target="_blank" rel="noopener">Z. Bao et al., Nature Communications (2024)</a></li>
+          <li id="ref-24"><span class="ref-num">[24]</span><a href="https://ionq.com/news/ionq-completes-acquisition-of-skywater-technology" target="_blank" rel="noopener">IonQ, IonQ completes acquisition of SkyWater Technology, Press release (2026)</a></li>
+          <li id="ref-25"><span class="ref-num">[25]</span><a href="https://ionq.com/news/ionq-announces-intent-to-acquire-vector-atomic-expanding-into-quantum" target="_blank" rel="noopener">IonQ, IonQ announces intent to acquire Vector Atomic, expanding into quantum sensing, Press release (2025)</a></li>
+          <li id="ref-26"><span class="ref-num">[26]</span><a href="https://arxiv.org/abs/2607.18552" target="_blank" rel="noopener">S. Tariq et al., arXiv:2607.18552 (2026)</a></li>
+          <li id="ref-27"><span class="ref-num">[27]</span><a href="https://ionq.com/news/ionq-completes-acquisition-of-id-quantique-cementing-leadership-in-quantum" target="_blank" rel="noopener">IonQ, IonQ completes acquisition of ID Quantique, cementing leadership in quantum networking and secure communications, Press release (2025)</a></li>
+          <li id="ref-28"><span class="ref-num">[28]</span><a href="https://www.ionq.com/news/ionq-completes-acquisition-of-lightsynq-accelerating-quantum-computing-and" target="_blank" rel="noopener">IonQ, IonQ completes acquisition of Lightsynq, accelerating quantum computing and networking roadmap, Press release (2025)</a></li>
+          <li id="ref-29"><span class="ref-num">[29]</span><a href="https://arxiv.org/abs/2310.03011" target="_blank" rel="noopener">A. M. Dalzell et al., arXiv:2310.03011 (2023)</a></li>
+          <li id="ref-30"><span class="ref-num">[30]</span><a href="https://arxiv.org/abs/2204.11890" target="_blank" rel="noopener">A. Delgado et al., Physical Review A (2022)</a></li>
+          <li id="ref-31"><span class="ref-num">[31]</span><a href="https://arxiv.org/abs/1304.3061" target="_blank" rel="noopener">A. Peruzzo et al., Nature Communications (2014)</a></li>
+          <li id="ref-32"><span class="ref-num">[32]</span><a href="https://arxiv.org/abs/quant-ph/9511026" target="_blank" rel="noopener">A. Y. Kitaev, arXiv:quant-ph/9511026 (1995)</a></li>
+          <li id="ref-33"><span class="ref-num">[33]</span><a href="https://arxiv.org/abs/quant-ph/0005055" target="_blank" rel="noopener">G. Brassard, P. Høyer, M. Mosca, and A. Tapp, Contemporary Mathematics (2002)</a></li>
+          <li id="ref-34"><span class="ref-num">[34]</span><a href="https://arxiv.org/abs/1806.06893" target="_blank" rel="noopener">S. Woerner and D. J. Egger, npj Quantum Information (2019)</a></li>
+          <li id="ref-35"><span class="ref-num">[35]</span><a href="https://arxiv.org/abs/2310.17783" target="_blank" rel="noopener">Y. Mizuno and T. Komatsuzaki, Physical Review Research (2024)</a></li>
+          <li id="ref-36"><span class="ref-num">[36]</span><a href="https://arxiv.org/abs/0811.3171" target="_blank" rel="noopener">A. W. Harrow, A. Hassidim, and S. Lloyd, Physical Review Letters (2009)</a></li>
+          <li id="ref-37"><span class="ref-num">[37]</span><a href="https://arxiv.org/abs/1611.09347" target="_blank" rel="noopener">J. Biamonte et al., Nature (2017)</a></li>
+          <li id="ref-38"><span class="ref-num">[38]</span><a href="https://arxiv.org/abs/1804.09139" target="_blank" rel="noopener">S. Lloyd and C. Weedbrook, Physical Review Letters (2018)</a></li>
+          <li id="ref-39"><span class="ref-num">[39]</span><a href="https://arxiv.org/abs/1411.4028" target="_blank" rel="noopener">E. Farhi, J. Goldstone, and S. Gutmann, arXiv:1411.4028 (2014)</a></li>
+          <li id="ref-40"><span class="ref-num">[40]</span><a href="https://www.science.org/doi/10.1126/sciadv.adm6761" target="_blank" rel="noopener">R. Shaydulin et al., Science Advances (2024)</a></li>
+          <li id="ref-41"><span class="ref-num">[41]</span><a href="https://arxiv.org/abs/2405.09169" target="_blank" rel="noopener">J. A. Montañez-Barrera and K. Michielsen, arXiv:2405.09169 (2024)</a></li>
+          <li id="ref-42"><span class="ref-num">[42]</span><a href="https://arxiv.org/abs/2407.20212" target="_blank" rel="noopener">S. Kim et al., arXiv:2407.20212 (2024)</a></li>
+          <li id="ref-43"><span class="ref-num">[43]</span><a href="https://arxiv.org/abs/2607.20225" target="_blank" rel="noopener">S. Kim et al., arXiv:2607.20225 (2026)</a></li>
+          <li id="ref-44"><span class="ref-num">[44]</span><a href="https://doi.org/10.1038/s41598-022-10555-8" target="_blank" rel="noopener">R. Herrman et al., Scientific Reports (2022)</a></li>
+        </ol>
+      </section>
+
+      <!-- 14 -->
+      <section id="s14" class="article-section">
+        <p class="article-kicker">14 | Appendix</p>
+        <h2>Code snippets demonstrate possibilities of practical quantum advantage in FTQC as well as the limitations of the current best possible classical computing results<sup>23</sup>.</h2>
+
+        <p>Public repository: <a href="https://github.com/kimboguk/practical_quantum_advantage" target="_blank" rel="noopener"><strong>github.com/kimboguk/practical_quantum_advantage</strong></a></p>
+
+        <table class="data-table is-stacked">
+          <thead>
+            <tr><th scope="col">Area</th><th scope="col">Subject</th><th scope="col">Claims</th><th scope="col">Quantum simulator</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Quantum chemistry</td>
+              <td data-label="Subject">Computation of N<sub>2</sub> dissociation energy curves</td>
+              <td data-label="Claims"><ul><li>Current classical methods fail as bonds stretch toward breaking.</li><li>Sample-based Quantum Diagonalization (SQD) stays robust there, but is not yet accurate enough.</li></ul></td>
+              <td data-label="Quantum simulator">Y</td>
+            </tr>
+            <tr>
+              <td>Finance</td>
+              <td data-label="Subject">Tail-risk estimation</td>
+              <td data-label="Claims"><ul><li>Iterative Amplitude Estimation (IQAE) shows a quadratic advantage over classical Monte Carlo in the number of queries, but is still too slow at current gate speeds.</li></ul></td>
+              <td data-label="Quantum simulator">Y</td>
+            </tr>
+            <tr>
+              <td>Finance</td>
+              <td data-label="Subject">Derivative pricing</td>
+              <td data-label="Claims"><ul><li>Option payoffs are encoded by Quantum Signal Processing (QSP) without costly quantum arithmetic, reducing resources by a constant factor.</li></ul></td>
+              <td data-label="Quantum simulator">Y</td>
+            </tr>
+            <tr>
+              <td>CFD</td>
+              <td data-label="Subject">Turbulence</td>
+              <td data-label="Claims"><ul><li>A nonlinear phase field cannot be compressed into a low-order MPS, which limits classical computation but does not necessarily translate into a quantum benefit.</li></ul></td>
+              <td data-label="Quantum simulator">N</td>
+            </tr>
+            <tr>
+              <td>Optimization</td>
+              <td data-label="Subject">Low-Autocorrelation Binary Sequences (LABS), Max-Cut</td>
+              <td data-label="Claims"><ul><li>QAOA with Quantum Minimum Finding (QMF) scales on par with the best known classical heuristic.</li><li>QMF requires FTQC; at current noise levels, QAOA results degrade toward random guessing.</li></ul></td>
+              <td data-label="Quantum simulator">Y</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ol class="footnotes">
+          <li><span class="fn-num">23</span>Adapted from existing publication by validating claims, fixing execution for hardware compatibility, and adding analysis such as noise effects and the limitation of classical computing resources.</li>
+        </ol>
+      </section>
+
+      <p class="article-end">© 2026 Boguk Kim · Published by Qbique Tech Perspectives</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Qbique, Inc. · <span data-i18n="rights">All rights reserved.</span></small>
+      <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
