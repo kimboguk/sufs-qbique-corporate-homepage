@@ -100,6 +100,7 @@ const i18n = {
     menuFeatures: "Features",
     menuTechnology: "Technology",
     menuPricing: "Services",
+    menuPerspectives: "Tech Perspectives",
     menuContact: "Contact",
     
     heroTitle: "<span class='accent'>Institutional-grade capabilities,</span> <br class='br-md' />for every investor",
@@ -237,6 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const light = document.documentElement.getAttribute('data-theme') === 'light';
     document.documentElement.setAttribute('data-theme', light ? '' : 'light');
     localStorage.setItem('theme', light ? 'dark' : 'light');
+    // Keep the giscus comment widget in sync with the site theme
+    document.querySelector('iframe.giscus-frame')?.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: light ? 'dark' : 'light' } } }, 'https://giscus.app');
   });
 
   // Mobile nav
@@ -309,6 +313,77 @@ document.addEventListener('DOMContentLoaded', () => {
       sendBtn.disabled = false;
       sendBtn.textContent = currentLang === 'ko' ? '문의하기' : 'Submit';
       setTimeout(() => { note.textContent = ''; note.className = 'form-note'; }, 7000);
+    }
+  });
+
+  // Tech Perspectives public discussion (giscus, backed by GitHub Discussions)
+  const giscusEl = document.getElementById('giscus');
+  if (giscusEl) {
+    const g = document.createElement('script');
+    const attrs = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'kimboguk/qbique-perspectives-discussions',
+      'data-repo-id': 'R_kgDOVWrvKw',
+      'data-category': 'Announcements',
+      'data-category-id': 'DIC_kwDOVWrvK84DJkjM',
+      'data-mapping': 'specific',
+      'data-term': giscusEl.dataset.term,
+      'data-strict': '1',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-input-position': 'top',
+      'data-theme': document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark',
+      'data-lang': 'en',
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+    };
+    Object.entries(attrs).forEach(([k, v]) => g.setAttribute(k, v));
+    g.async = true;
+    giscusEl.appendChild(g);
+  }
+
+  // Tech Perspectives feedback form handler
+  const fbForm = document.querySelector('.feedback-form');
+  fbForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fbNote = fbForm.querySelector('.form-note');
+    const fbBtn = fbForm.querySelector('button');
+
+    const formData = new FormData(fbForm);
+    const data = {
+      article: formData.get('article'),
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+      honeypot: formData.get('honeypot'),
+    };
+
+    fbBtn.disabled = true;
+    fbBtn.textContent = 'Sending...';
+    fbNote.textContent = '';
+    fbNote.className = 'form-note';
+
+    try {
+      const res = await fetch('https://form.qbique.co.kr/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        fbNote.textContent = 'Thank you for your feedback!';
+        fbNote.className = 'form-note form-note-success';
+        fbForm.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      fbNote.textContent = 'Failed to send. Please try again later.';
+      fbNote.className = 'form-note form-note-error';
+    } finally {
+      fbBtn.disabled = false;
+      fbBtn.textContent = 'Send feedback';
+      setTimeout(() => { fbNote.textContent = ''; fbNote.className = 'form-note'; }, 7000);
     }
   });
 });

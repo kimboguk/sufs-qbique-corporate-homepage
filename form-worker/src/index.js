@@ -49,6 +49,10 @@ export default {
       return handleSubmit(request, env);
     }
 
+    if (url.pathname === '/feedback' && request.method === 'POST') {
+      return handleFeedback(request, env);
+    }
+
     return jsonResponse({ error: 'Not found' }, 404, request);
   },
 };
@@ -99,6 +103,75 @@ async function handleSubmit(request, env) {
     `MIME-Version: 1.0`,
     `From: ${encodeMimeWord(fromName)} <${fromAddr}>`,
     `Reply-To: ${encodeMimeWord(name)} <${email}>`,
+    `To: Qbique <contact@qbique.co.kr>`,
+    `Subject: ${encodeMimeWord(subject)}`,
+    `Content-Type: text/plain; charset=utf-8`,
+    `Content-Transfer-Encoding: base64`,
+    ``,
+    utf8ToBase64(emailBody),
+  ].join('\r\n');
+
+  try {
+    const msg = new EmailMessage(fromAddr, envelopeTo, rawEmail);
+    await env.EMAIL.send(msg);
+    return jsonResponse({ success: true }, 200, request);
+  } catch (err) {
+    console.error('Email send error:', err);
+    return jsonResponse({ error: 'Failed to send email' }, 500, request);
+  }
+}
+
+async function handleFeedback(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return jsonResponse({ error: 'Invalid JSON' }, 400, request);
+  }
+
+  const { article, name, email, message, honeypot } = body;
+
+  // Honeypot check — if filled, silently accept (bot trap)
+  if (honeypot) {
+    return jsonResponse({ success: true }, 200, request);
+  }
+
+  // Message is the only required field
+  if (!message || !String(message).trim()) {
+    return jsonResponse({ error: 'Missing required field: message' }, 400, request);
+  }
+  if (String(message).length > 5000) {
+    return jsonResponse({ error: 'Message too long' }, 400, request);
+  }
+
+  // Email is optional, but must be valid when given
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return jsonResponse({ error: 'Invalid email format' }, 400, request);
+  }
+
+  const articleTitle = String(article || '-').slice(0, 200);
+  const sender = name ? String(name).slice(0, 100) : '익명 / Anonymous';
+
+  // Build email content
+  const emailBody = [
+    `글 / Article: ${articleTitle}`,
+    `성함 / Name: ${sender}`,
+    `이메일 / Email: ${email || '-'}`,
+    '',
+    '의견 / Feedback:',
+    message,
+  ].join('\r\n');
+
+  const subject = `[Qbique Tech Perspectives 의견] ${articleTitle}`;
+  const fromName = `Qbique Tech Perspectives (${sender})`;
+  const fromAddr = 'noreply@qbique.co.kr';
+  const envelopeTo = 'kim.boguk@gmail.com';
+
+  // Build raw MIME message; Reply-To only when the reader left an email
+  const rawEmail = [
+    `MIME-Version: 1.0`,
+    `From: ${encodeMimeWord(fromName)} <${fromAddr}>`,
+    ...(email ? [`Reply-To: ${encodeMimeWord(sender)} <${email}>`] : []),
     `To: Qbique <contact@qbique.co.kr>`,
     `Subject: ${encodeMimeWord(subject)}`,
     `Content-Type: text/plain; charset=utf-8`,

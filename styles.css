@@ -82,7 +82,7 @@ a:hover { text-decoration: underline; }
 }
 
 .nav-list { display: flex; align-items: center; gap: .8rem; list-style: none; padding: 0; margin: 0; }
-.nav-list a { padding: .5rem .6rem; border-radius: .6rem; font-size: .95rem; }
+.nav-list a { padding: .5rem .6rem; border-radius: .6rem; font-size: .95rem; white-space: nowrap; }
 .nav-list a:hover { background: var(--bg-muted); text-decoration: none; }
 
 .theme-toggle {
@@ -374,7 +374,7 @@ a:hover { text-decoration: underline; }
 
 /* Contact */
 .contact { display: grid; gap: 1rem; }
-.contact-form {
+.contact-form, .feedback-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: .8rem;
@@ -383,17 +383,17 @@ a:hover { text-decoration: underline; }
   padding: 1.5rem;
   border-radius: 1rem;
 }
-.contact-form label { display: grid; gap: .4rem; font-size: .95rem; color: var(--text-dim); }
-.contact-form input, .contact-form textarea {
+.contact-form label, .feedback-form label { display: grid; gap: .4rem; font-size: .95rem; color: var(--text-dim); }
+.contact-form input, .contact-form textarea, .feedback-form input, .feedback-form textarea {
   width: 100%; padding: .7rem .75rem; border-radius: .6rem;
   border: 1px solid var(--border); background: var(--bg-muted); color: var(--text);
 }
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus, .contact-form textarea:focus, .feedback-form input:focus, .feedback-form textarea:focus {
   outline: none;
   border-color: var(--brand);
 }
-.contact-form textarea { grid-column: 1 / -1; resize: vertical; }
-.contact-form button { grid-column: 1 / -1; }
+.contact-form textarea, .feedback-form textarea { grid-column: 1 / -1; resize: vertical; }
+.contact-form button, .feedback-form button { grid-column: 1 / -1; }
 .form-note { margin: 0; color: var(--accent); min-height: 1.2em; grid-column: 1 / -1; }
 
 /* Footer */
@@ -430,8 +430,12 @@ a:hover { text-decoration: underline; }
   .roadmap-items { flex-direction: column; }
 }
 
-@media (max-width: 640px) {
-  .br-md { display: inline; }
+@media (max-width: 1100px) {
+  .nav-list { gap: .2rem; }
+  .nav-list a { padding: .5rem .45rem; font-size: .9rem; }
+}
+
+@media (max-width: 900px) {
   .nav-toggle { display: inline-block; }
   .nav-list {
     position: absolute; right: 1rem; top: 56px;
@@ -440,7 +444,11 @@ a:hover { text-decoration: underline; }
     box-shadow: var(--shadow);
   }
   .nav-list.open { display: flex; }
-  .contact-form { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .br-md { display: inline; }
+  .contact-form, .feedback-form { grid-template-columns: 1fr; }
   .card-grid, .card-grid-3 { grid-template-columns: 1fr; }
   .value-grid { grid-template-columns: 1fr; gap: 1rem; }
   .hero { padding: 4rem 0 3rem; }
@@ -613,4 +621,29 @@ a:hover { text-decoration: underline; }
   }
   .data-table.is-stacked tr.is-highlight { background: var(--bg-muted); }
   .data-table.is-stacked tr.is-highlight td { background: transparent; }
+}
+
+/* Tech Perspectives list + discussion */
+.nav-list a[aria-current="page"] { background: var(--bg-muted); }
+.article-back { margin: 0 0 1.5rem; font-size: .95rem; }
+.post-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.25rem; }
+.post-list > li { margin: 0; }
+.post-card {
+  display: grid; grid-template-columns: 220px 1fr; gap: 1.5rem;
+  background: var(--card); border: 1px solid var(--border); border-radius: .8rem; padding: 1.25rem;
+}
+.post-card img { width: 100%; height: auto; border-radius: .5rem; border: 1px solid var(--border); display: block; }
+.post-card h2 { margin: .2rem 0 .6rem; font-size: 1.3rem; line-height: 1.35; }
+.post-card h2 a { color: var(--text); }
+.post-card p { margin: 0 0 .6rem; color: var(--text-dim); }
+.post-meta { color: var(--accent); font-family: "Barlow Condensed", "IBM Plex Sans", sans-serif; letter-spacing: .2em; text-transform: uppercase; font-size: .95rem; }
+.post-more { font-weight: 600; }
+.discussion .feedback-box { background: var(--bg-muted); border: 1px solid var(--border); border-radius: .8rem; padding: 1.25rem 1.4rem; }
+.discussion .feedback-box h3, .discussion .giscus-box h3 { margin-top: 0; }
+.discussion .giscus-box { margin-top: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: .8rem; padding: 1.25rem 1.4rem; }
+.discussion .feedback-box { margin-top: 1.25rem; }
+.feedback-lead { color: var(--text-dim); margin: 0 0 1rem; }
+.feedback-form label:has(textarea) { grid-column: 1 / -1; }
+@media (max-width: 760px) {
+  .post-card { grid-template-columns: 1fr; }
 }
