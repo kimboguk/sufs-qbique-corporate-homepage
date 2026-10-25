@@ -532,6 +532,9 @@ a:hover { text-decoration: underline; }
 .data-table td:first-child { font-weight: 700; }
 .data-table ul { margin: 0; padding-left: 1rem; }
 .data-table li + li { margin-top: .15rem; }
+.data-table ul.list-2col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.6rem; }
+.data-table ul.list-2col li + li { margin-top: 0; }
+.data-table ul.list-2col li:nth-child(n+3) { margin-top: .15rem; }
 .data-table tr.is-highlight td { background: var(--bg-muted); }
 .data-table tr.is-highlight td:first-child { color: var(--accent); }
 
@@ -612,7 +615,8 @@ a:hover { text-decoration: underline; }
   .flow-arrow { transform: rotate(90deg); }
   .glossary > div { grid-template-columns: 1fr; gap: .2rem; }
 
-  .data-table.is-stacked thead { display: none; }
+  .data-table.is-stacked, .data-table.is-stacked tbody { display: block; }
+  .data-table.is-stacked thead, .data-table.is-stacked colgroup { display: none; }
   .data-table.is-stacked tr { display: block; padding: .8rem 0; border-bottom: 1px solid var(--border); }
   .data-table.is-stacked td { display: block; padding: .2rem 0; border: 0; }
   .data-table.is-stacked td[data-label]::before {
