@@ -338,7 +338,7 @@
 
         <div class="callout">
           <span class="callout-label">Readout issue</span>
-          <p>Even though entangled n-qubits can process an exponentially large amount of information, only a single n-bit outcome is retrieved upon measurement.</p>
+          <p>Even though entangled n-qubits can process an exponentially large amount of information, only a single n-bit outcome is retrieved upon measurement<sup>12</sup>.</p>
         </div>
 
         <div class="callout">
@@ -351,13 +351,14 @@
 
         <ol class="footnotes">
           <li><span class="fn-num">11</span>Values measured on different bases are shown for reference only.</li>
+          <li><span class="fn-num">12</span>Holevo bound <a class="cite" href="#ref-2">[2]</a></li>
         </ol>
       </section>
 
       <!-- 07 -->
       <section id="s07" class="article-section">
         <p class="article-kicker">07 | Practical quantum advantage</p>
-        <h2 class="is-long">Practical quantum advantage comes from application problems beyond the reach of classical computation,<br class="br-wide" /> solved by quantum computing alone or through quantum-classical hybrid approaches<sup>12</sup>.</h2>
+        <h2 class="is-long">Practical quantum advantage comes from application problems beyond the reach of classical computation,<br class="br-wide" /> solved by quantum computing alone or through quantum-classical hybrid approaches<sup>13</sup>.</h2>
 
         <h3>Classification of application areas by practical quantum advantage</h3>
 
@@ -367,7 +368,7 @@
             <ul>
               <li>Breaking public-key cryptosystems based on RSA or elliptic curves through <em class="key">Shor’s algorithm</em>, which shows a clear exponential advantage over classical algorithms through QFT and phase estimation <a class="cite" href="#ref-16">[16]</a></li>
               <li>Molecular electronic structure or binding energy problems in <em class="key">quantum chemistry</em> that require formulations more general than the Heisenberg model <a class="cite" href="#ref-17">[17]</a>, not the generalized Ising model represented in QUBO</li>
-              <li><em class="key">Turbulent flows</em>, other than vortices or eddies with distinct patterns, whose profiles are not effectively described by a low-order MPS<sup>13</sup> representation and have nontrivial Fourier coefficients distributed randomly over wide ranges, when only a few core physical properties are extracted, not requiring many readouts <a class="cite" href="#ref-18">[18]</a></li>
+              <li><em class="key">Turbulent flows</em>, other than vortices or eddies with distinct patterns, whose profiles are not effectively described by a low-order MPS<sup>14</sup> representation and have nontrivial Fourier coefficients distributed randomly over wide ranges, when only a few core physical properties are extracted, not requiring many readouts <a class="cite" href="#ref-18">[18]</a></li>
             </ul>
           </div>
         </div>
@@ -389,15 +390,15 @@
           <h4 class="tier-head">Areas where no clear practical quantum advantage is expected</h4>
           <div class="tier-body">
             <ul>
-              <li>General CFD<sup>14</sup> problems that can be handled through a <em class="key">low-order MPS</em> representation <a class="cite" href="#ref-21">[21]</a>, requiring <em class="key">many readouts</em> to check entire solution profiles in time evolution</li>
+              <li>General CFD<sup>15</sup> problems that can be handled through a <em class="key">low-order MPS</em> representation <a class="cite" href="#ref-21">[21]</a>, requiring <em class="key">many readouts</em> to check entire solution profiles in time evolution</li>
             </ul>
           </div>
         </div>
 
         <ol class="footnotes">
-          <li><span class="fn-num">12</span>Regardless of whether the advantage is exponential</li>
-          <li><span class="fn-num">13</span>Matrix product state</li>
-          <li><span class="fn-num">14</span>Computational fluid dynamics</li>
+          <li><span class="fn-num">13</span>Regardless of whether the advantage is exponential</li>
+          <li><span class="fn-num">14</span>Matrix product state</li>
+          <li><span class="fn-num">15</span>Computational fluid dynamics</li>
         </ol>
       </section>
 
@@ -435,7 +436,7 @@
           </div>
           <div class="info-card">
             <h4><span class="num">02</span><span>On-device quantum chip <a class="cite" href="#ref-24">[24]</a></span></h4>
-            <ul><li>Robust and <em class="key">precise sensing</em> through edge devices<sup>15</sup> such as phone, car, and robots <a class="cite" href="#ref-25">[25]</a></li></ul>
+            <ul><li>Robust and <em class="key">precise sensing</em> through edge devices<sup>16</sup> such as phone, car, and robots <a class="cite" href="#ref-25">[25]</a></li></ul>
           </div>
           <div class="info-card">
             <h4><span class="num">03</span><span>Quantum reservoir computing</span></h4>
@@ -443,11 +444,11 @@
           </div>
         </div>
 
-        <div class="callout"><p>Each task is assigned to the <em class="key">best-suited technology</em> within a single platform, connecting through quantum-safe networks<sup>16</sup>. <a class="cite" href="#ref-27">[27</a>, <a class="cite" href="#ref-28">28]</a></p></div>
+        <div class="callout"><p>Each task is assigned to the <em class="key">best-suited technology</em> within a single platform, connecting through quantum-safe networks<sup>17</sup>. <a class="cite" href="#ref-27">[27</a>, <a class="cite" href="#ref-28">28]</a></p></div>
 
         <ol class="footnotes">
-          <li><span class="fn-num">15</span>Photonic devices are candidates for edge devices.</li>
-          <li><span class="fn-num">16</span>Trapped ions for intensive core computing, photons for mobile on-chips, NV for sensing, etc.</li>
+          <li><span class="fn-num">16</span>Photonic devices are candidates for edge devices.</li>
+          <li><span class="fn-num">17</span>Trapped ions for intensive core computing, photons for mobile on-chips, NV for sensing, etc.</li>
         </ol>
       </section>
 
@@ -461,8 +462,8 @@
           <div class="info-card">
             <h4><span class="num">01</span><span>Quantum chemistry <a class="cite" href="#ref-30">[30]</a></span></h4>
             <ul>
-              <li>Variational Quantum Eigensolver (VQE)<sup>17</sup> <a class="cite" href="#ref-31">[31]</a></li>
-              <li>Quantum Phase Estimation (QPE)<sup>18</sup> <a class="cite" href="#ref-32">[32]</a></li>
+              <li>Variational Quantum Eigensolver (VQE)<sup>18</sup> <a class="cite" href="#ref-31">[31]</a></li>
+              <li>Quantum Phase Estimation (QPE)<sup>19</sup> <a class="cite" href="#ref-32">[32]</a></li>
             </ul>
           </div>
           <div class="info-card">
@@ -476,7 +477,7 @@
             <ul>
               <li>Quantum Lattice Boltzmann Method (QLBM) <a class="cite" href="#ref-18">[18]</a></li>
               <li>Quantum Dynamic Mode Decomposition (QDMD) <a class="cite" href="#ref-35">[35]</a></li>
-              <li>Quantum Linear Systems Algorithms (QLSA)<sup>19</sup> <a class="cite" href="#ref-36">[36]</a></li>
+              <li>Quantum Linear Systems Algorithms (QLSA)<sup>20</sup> <a class="cite" href="#ref-36">[36]</a></li>
             </ul>
           </div>
           <div class="info-card">
@@ -488,21 +489,21 @@
         </div>
 
         <ol class="footnotes">
-          <li><span class="fn-num">17</span>NISQ</li>
-          <li><span class="fn-num">18</span>FTQC</li>
-          <li><span class="fn-num">19</span>HHL (Harrow-Hassidim-Lloyd) solver used for linear systems</li>
+          <li><span class="fn-num">18</span>NISQ</li>
+          <li><span class="fn-num">19</span>FTQC</li>
+          <li><span class="fn-num">20</span>HHL (Harrow-Hassidim-Lloyd) solver used for linear systems</li>
         </ol>
       </section>
 
       <!-- 11 -->
       <section id="s11" class="article-section">
         <p class="article-kicker">11 | QAOA</p>
-        <h2>QAOA is an algorithm dealing with generalized annealing problems <a class="cite" href="#ref-39">[39]</a>, including HUBO<sup>20</sup>.</h2>
+        <h2>QAOA is an algorithm dealing with generalized annealing problems <a class="cite" href="#ref-39">[39]</a>, including HUBO<sup>21</sup>.</h2>
 
         <h3>Workflow</h3>
         <ol class="steps">
           <li><span class="num">01</span><span>Initialize the qubits in a <em class="key">uniform superposition</em> that represents all possible binary solution states of n variables.</span></li>
-          <li><span class="num">02</span><span>The cost and mixing layers, parameterized by gamma and beta, alternately act on the qubits <em class="key">p times</em><sup>21</sup>.</span></li>
+          <li><span class="num">02</span><span>The cost and mixing layers, parameterized by gamma and beta, alternately act on the qubits <em class="key">p times</em><sup>22</sup>.</span></li>
           <li><span class="num">03</span><span>The final state is <em class="key">measured</em>.</span></li>
         </ol>
 
@@ -510,7 +511,7 @@
         <table class="data-table">
           <tbody>
             <tr><td>Base QAOA</td><td></td></tr>
-            <tr><td>LR-QAOA<sup>22</sup> <a class="cite" href="#ref-41">[41]</a></td><td>fixes a linear schedule to set the angle parameters, but it usually requires a large p.</td></tr>
+            <tr><td>LR-QAOA<sup>23</sup> <a class="cite" href="#ref-41">[41]</a></td><td>fixes a linear schedule to set the angle parameters, but it usually requires a large p.</td></tr>
             <tr><td>DQAOA <a class="cite" href="#ref-42">[42]</a></td><td>divides a large problem into smaller pieces with lower complexity and gathers their results.</td></tr>
             <tr><td>DQAOA-GPT <a class="cite" href="#ref-43">[43]</a></td><td>uses AI to construct circuits for DQAOA, which belongs to the quantum-classical hybrid approaches.</td></tr>
             <tr><td>MA-QAOA <a class="cite" href="#ref-44">[44]</a></td><td>uses multi-angle parameters for different qubits.</td></tr>
@@ -518,9 +519,9 @@
         </table>
 
         <ol class="footnotes">
-          <li><span class="fn-num">20</span>Higher-order Unconstrained Binary Optimization, in which higher-order nonlinear operators are exactly expressed as the combination of two-qubit Pauli-z and CNOT gates <a class="cite" href="#ref-40">[40]</a>.</li>
-          <li><span class="fn-num">21</span>The cost layer (gamma) consists of multi-qubit phase shift operators encoding the objective function using multiplications of the Pauli-z operator between coupled variables, thereby generating entanglement, and the mixing layer (beta) consists of one-qubit rotation (Pauli-x) operators searching the solution space. As p goes to infinity, the approximation converges to the desired optimal solution, but a larger p requires more gate operations and longer execution times.</li>
-          <li><span class="fn-num">22</span>Linear Ramp (LR) QAOA fixes a linear schedule for the angle parameters gamma and beta, but it usually requires a large p.</li>
+          <li><span class="fn-num">21</span>Higher-order Unconstrained Binary Optimization, in which higher-order nonlinear operators are exactly expressed as the combination of two-qubit Pauli-z and CNOT gates <a class="cite" href="#ref-40">[40]</a>.</li>
+          <li><span class="fn-num">22</span>The cost layer (gamma) consists of multi-qubit phase shift operators encoding the objective function using multiplications of the Pauli-z operator between coupled variables, thereby generating entanglement, and the mixing layer (beta) consists of one-qubit rotation (Pauli-x) operators searching the solution space. As p goes to infinity, the approximation converges to the desired optimal solution, but a larger p requires more gate operations and longer execution times.</li>
+          <li><span class="fn-num">23</span>Linear Ramp (LR) QAOA fixes a linear schedule for the angle parameters gamma and beta, but it usually requires a large p.</li>
         </ol>
       </section>
 
@@ -606,7 +607,7 @@
       <!-- 14 -->
       <section id="s14" class="article-section">
         <p class="article-kicker">14 | Appendix</p>
-        <h2 class="is-long">Code snippets demonstrate possibilities of practical quantum advantage in FTQC<br class="br-wide" /> when classical computing hits a wall at a large scale with its current best possible method<sup>23</sup>.</h2>
+        <h2 class="is-long">Code snippets demonstrate possibilities of practical quantum advantage in FTQC<br class="br-wide" /> when classical computing hits a wall at a large scale with its current best possible method<sup>24</sup>.</h2>
 
         <p>Public repository: <a href="https://github.com/kimboguk/practical_quantum_advantage" target="_blank" rel="noopener"><strong>github.com/kimboguk/practical_quantum_advantage</strong></a></p>
 
@@ -649,7 +650,7 @@
         </table>
 
         <ol class="footnotes">
-          <li><span class="fn-num">23</span>Adapted from existing publication by validating claims, fixing execution for hardware compatibility, and adding analysis such as noise effects and the limitation of classical computing resources.</li>
+          <li><span class="fn-num">24</span>Adapted from existing publication by validating claims, fixing execution for hardware compatibility, and adding analysis such as noise effects and the limitation of classical computing resources.</li>
         </ol>
       </section>
 
