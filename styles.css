@@ -479,6 +479,7 @@ a:hover { text-decoration: underline; }
 .article-section h2.is-long { font-size: clamp(1.2rem, 1.95vw, 1.33rem); }
 .article-section h3 { margin: 2rem 0 .8rem; font-size: 1.05rem; color: var(--accent); font-weight: 600; }
 .article-section h4 { margin: 0 0 .5rem; font-size: 1.05rem; }
+.article-section h4.sub-label { margin: -.4rem 0 .8rem; }
 .article-section p, .article-section li { color: var(--text); }
 .article-section ul { padding-left: 1.2rem; margin: .4rem 0; }
 .article-section li + li { margin-top: .35rem; }
