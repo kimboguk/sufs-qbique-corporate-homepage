@@ -500,6 +500,10 @@ a:hover { text-decoration: underline; }
 }
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
+.note-strip { margin: 1.5rem 0 0; padding: .9rem 1.25rem; background: var(--bg-muted); color: var(--text-dim); border-radius: .6rem; }
+.note-strip p { margin: 0; color: var(--text-dim); }
+.strip-arrow { text-align: center; color: var(--text-dim); font-size: 1rem; line-height: 1; margin: .45rem 0; opacity: .7; }
+.callout.callout-after-arrow { margin-top: 0; }
 .callout-label { display: block; margin-bottom: .4rem; font-weight: 700; color: var(--accent); }
 .callout ol { margin: 0; padding-left: 1.3rem; }
 
